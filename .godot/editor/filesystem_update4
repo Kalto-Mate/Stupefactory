@@ -1,0 +1,4 @@
+res://Assets/Scenes/main.scn
+res://Assets/Scripts/event.gd
+res://Assets/Scripts/PlayerInput.gd
+res://Assets/Scripts/SeeSaw.gd

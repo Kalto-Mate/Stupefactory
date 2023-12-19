@@ -1,0 +1,16 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1703007987
+icon.svg::CompressedTexture2D::1850917042875202754::1703004071::1703004084::1::::<><>::
+::res://Assets/::1703006998
+::res://Assets/Debug/::1703006453
+Layout.png::CompressedTexture2D::6168681604318270927::1703005492::1703005893::1::::<><>::
+Platform.png::CompressedTexture2D::4977201975010984501::1703005981::1703005983::1::::<><>::
+SeeSaw.png::CompressedTexture2D::7117826241705869317::1703006450::1703006453::1::::<><>::
+::res://Assets/Prefabs/::1703006107
+platform.res::PackedScene::6998849608811735535::1703006107::0::1::::<><>::uid://cc5813qu8p2u0::::res://Assets/Debug/Platform.png
+::res://Assets/Scenes/::1703008015
+main.scn::PackedScene::6975660524273726320::1703008015::0::1::::<><>::uid://ct5fjxgrakhu2::::res://Assets/Debug/Layout.png<>uid://c6ykbbji3a480::::res://Assets/Prefabs/platform.res<>res://Assets/Scripts/SeeSaw.gd<>uid://c8n6s8mm6xind::::res://Assets/Debug/SeeSaw.png<>res://Assets/Scripts/PlayerInput.gd
+::res://Assets/Scripts/::1703008015
+game_events.gd::GDScript::-1::1703007421::0::1::::<>Node<>::
+PlayerInput.gd::GDScript::-1::1703008015::0::1::::<>Node<>::
+SeeSaw.gd::GDScript::-1::1703007863::0::1::::<>RigidBody2D<>::
