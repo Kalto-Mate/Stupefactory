@@ -2,3 +2,5 @@ res://Assets/Scenes/main.scn
 res://Assets/Scripts/event.gd
 res://Assets/Scripts/PlayerInput.gd
 res://Assets/Scripts/SeeSaw.gd
+res://Assets/Prefabs/platform.res
+res://Assets/Prefabs/Middleplatform.res
