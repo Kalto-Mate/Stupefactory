@@ -1,3 +1,5 @@
+AnimatableBody2D
+AnimationPlayer
 Timer
 CollisionShape2D
 StaticBody2D
