@@ -1,13 +1,16 @@
 extends Node2D
-@export var walker_A : PackedScene
-@export var walker_B : PackedScene
-@export var walker_C : PackedScene
+@export var DetectionArea: Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	DetectionArea.body_entered.connect(_processWalker)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	pass
+
+func _processWalker(body:Node2D):
+	print("Processed ",body.name)
+	body.queue_free()
 	pass

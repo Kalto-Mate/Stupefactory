@@ -12,3 +12,8 @@ res://Assets/Prefabs/spawner.tscn
 res://Assets/Prefabs/deleter.tscn
 res://Assets/Scripts/spawnSystem.gd
 res://Assets/Scripts/spawner.gd
+res://Assets/Scripts/enums.gd
+res://Assets/Prefabs/see_saw.tscn
+res://Assets/Prefabs/Platform.res
+res://Assets/Scripts/deleter.gd
+res://Assets/Scripts/Platform.gd

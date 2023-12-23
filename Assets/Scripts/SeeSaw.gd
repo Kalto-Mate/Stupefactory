@@ -30,6 +30,14 @@ func _tweenToAngle(TargetAngle:float):
 	if SeeSaw_tween:
 		SeeSaw_tween.kill()
 	SeeSaw_tween = get_tree().create_tween()
+	
 	var AbsAngleDelta = abs(self.rotation_degrees - TargetAngle)
 	var adjustedTime = (AbsAngleDelta*StepTime) / platformMaxAbsAngle
+	
+	Signals.seeSawIsMoving.emit(true)
 	SeeSaw_tween.tween_property(self,"rotation_degrees",TargetAngle,adjustedTime)
+	SeeSaw_tween.finished.connect(_seeSawStoppedMoving)
+	
+func _seeSawStoppedMoving():
+	Signals.seeSawIsMoving.emit(false)
+	pass

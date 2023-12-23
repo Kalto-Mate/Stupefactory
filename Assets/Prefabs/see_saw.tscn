@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://caci8hk0t1ri5"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/SeeSaw.gd" id="1_g180m"]
+[ext_resource type="Texture2D" uid="uid://c8n6s8mm6xind" path="res://Assets/Debug/SeeSaw.png" id="2_xntva"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe2bx"]
+size = Vector2(406, 23)
+
+[sub_resource type="Animation" id="Animation_qkkfk"]
+resource_name = "tilt_negative_30"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [-0.523599]
+}
+
+[sub_resource type="Animation" id="Animation_d0thy"]
+resource_name = "tilt_neutral"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_l2676"]
+resource_name = "tilt_positive_30"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.523599]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ykoe"]
+_data = {
+"tilt_negative_30": SubResource("Animation_qkkfk"),
+"tilt_neutral": SubResource("Animation_d0thy"),
+"tilt_positive_30": SubResource("Animation_l2676")
+}
+
+[node name="SeeSaw" type="AnimatableBody2D"]
+position = Vector2(320, 178.5)
+script = ExtResource("1_g180m")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_xntva")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xe2bx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3ykoe")
+}
+speed_scale = 0.1
