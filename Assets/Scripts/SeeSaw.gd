@@ -6,7 +6,7 @@ var PositionIndex: int = 0
 var MaxPositionIndex: int = 1
 var MinPositionIndex: int = -1
 
-@export var StepTime:float = .5
+@export var StepTime:float = .1
 var platformMaxAbsAngle: float = 30
 
 func _ready():

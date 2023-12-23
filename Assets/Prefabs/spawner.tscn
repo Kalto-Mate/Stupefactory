@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqyk10vcrb7vb"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/spawner.gd" id="1_jthxg"]
+[ext_resource type="Texture2D" uid="uid://cqe8u7sijyaan" path="res://Assets/Debug/Spawner.png" id="1_m4ysh"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_jthxg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_m4ysh")
+offset = Vector2(15, 0)

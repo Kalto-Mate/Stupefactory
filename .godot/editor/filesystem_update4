@@ -4,3 +4,11 @@ res://Assets/Scripts/PlayerInput.gd
 res://Assets/Scripts/SeeSaw.gd
 res://Assets/Prefabs/platform.res
 res://Assets/Prefabs/Middleplatform.res
+res://Assets/Debug/DebugShader.gdshader
+res://Assets/Scripts/Walker.gd
+res://Assets/Scripts/signals.gd
+res://Assets/Prefabs/walker.res
+res://Assets/Prefabs/spawner.tscn
+res://Assets/Prefabs/deleter.tscn
+res://Assets/Scripts/spawnSystem.gd
+res://Assets/Scripts/spawner.gd
