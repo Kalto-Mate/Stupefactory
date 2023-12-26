@@ -17,3 +17,6 @@ res://Assets/Prefabs/see_saw.tscn
 res://Assets/Prefabs/Platform.res
 res://Assets/Scripts/deleter.gd
 res://Assets/Scripts/Platform.gd
+res://Assets/Prefabs/Objects/Clock.res
+res://Assets/Prefabs/Objects/Erlenmeyer.res
+res://Assets/Prefabs/Objects/ObjectBase.res

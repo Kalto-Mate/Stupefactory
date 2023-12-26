@@ -7,7 +7,7 @@ var pauseSpawning: bool = false
 
 func _ready():
 	spawnTimer.timeout.connect(spawnWalker)
-	Signals.seeSawIsMoving.connect(pauseTimer)
+	#Signals.seeSawIsMoving.connect(pauseTimer)
 
 func spawnWalker():
 	var chosenWalkerID = randi() % Walkers.size()
@@ -16,7 +16,7 @@ func spawnWalker():
 	var chosenSpawnerID = randi() % Spawners.size()
 	var chosenSpawner : Node2D = Spawners[chosenSpawnerID]
 	
-	print("Spawning walker type ",chosenWalkerID," at spawnPoint ", chosenSpawnerID)
+	#print("Spawning walker type ",chosenWalkerID," at spawnPoint ", chosenSpawnerID)
 	var newWalker = chosenWalker.instantiate()
 	SpawnedWalkers.append(newWalker)
 	newWalker.position = chosenSpawner.global_position

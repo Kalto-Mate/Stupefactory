@@ -11,6 +11,6 @@ func _process(delta):
 	pass
 
 func _processWalker(body:Node2D):
-	print("Processed ",body.name)
+	#print("Processed ",body.name)
 	body.queue_free()
 	pass

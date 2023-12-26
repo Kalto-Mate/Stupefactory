@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c8n6s8mm6xind" path="res://Assets/Debug/SeeSaw.png" id="2_xntva"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xe2bx"]
+custom_solver_bias = 1.0
 size = Vector2(406, 23)
 
 [sub_resource type="Animation" id="Animation_qkkfk"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://drctyan25ya3w"]
+
+[ext_resource type="PackedScene" uid="uid://depffeiul8kln" path="res://Assets/Prefabs/Objects/ObjectBase.res" id="1_p6obl"]
+[ext_resource type="Texture2D" uid="uid://de485iukb51jv" path="res://Assets/Sprites/Objects.png" id="2_xpd2r"]
+
+[node name="Tire" instance=ExtResource("1_p6obl")]
+Shape = 2
+Colour = 2
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_xpd2r")
+frame = 6

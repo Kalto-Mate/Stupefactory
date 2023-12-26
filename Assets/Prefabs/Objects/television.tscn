@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://xwl652e4753x"]
+
+[ext_resource type="PackedScene" uid="uid://depffeiul8kln" path="res://Assets/Prefabs/Objects/ObjectBase.res" id="1_l20tj"]
+[ext_resource type="Texture2D" uid="uid://de485iukb51jv" path="res://Assets/Sprites/Objects.png" id="2_v6l1l"]
+
+[node name="Television" instance=ExtResource("1_l20tj")]
+Shape = 1
+Family = 2
+Colour = 2
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_v6l1l")
+frame = 5

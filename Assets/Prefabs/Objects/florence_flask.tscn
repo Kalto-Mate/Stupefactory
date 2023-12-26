@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://df3ao5yji2xci"]
+
+[ext_resource type="PackedScene" uid="uid://depffeiul8kln" path="res://Assets/Prefabs/Objects/ObjectBase.res" id="1_p4lul"]
+[ext_resource type="Texture2D" uid="uid://de485iukb51jv" path="res://Assets/Sprites/Objects.png" id="2_pcq4d"]
+
+[node name="FlorenceFlask" instance=ExtResource("1_p4lul")]
+Shape = 2
+Family = 1
+Colour = 1
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_pcq4d")
+frame = 7
