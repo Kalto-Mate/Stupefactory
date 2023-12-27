@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bji568ss7olvn"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/input_machine.gd" id="1_ln6v6"]
+[ext_resource type="Texture2D" uid="uid://c1a2ogqorsbxi" path="res://Assets/Debug/Deleter.png" id="1_wkw1j"]
+[ext_resource type="Texture2D" uid="uid://clrj0sojq6jwm" path="res://Assets/Sprites/InputMachine.png" id="3_lb1ii"]
+[ext_resource type="Texture2D" uid="uid://fbhm5cav0y4f" path="res://Assets/Sprites/Monitor Symbols.png" id="3_mm7pn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlibg"]
+size = Vector2(30, 30)
+
+[node name="InputMachine" type="Node2D" node_paths=PackedStringArray("DetectionArea")]
+script = ExtResource("1_ln6v6")
+DetectionArea = NodePath("Area2D")
+
+[node name="Visuals" type="Sprite2D" parent="."]
+position = Vector2(-90, -30)
+texture = ExtResource("3_lb1ii")
+
+[node name="Monitor" type="Sprite2D" parent="."]
+position = Vector2(-60, -30)
+texture = ExtResource("3_mm7pn")
+hframes = 3
+vframes = 4
+
+[node name="Debug" type="Sprite2D" parent="."]
+position = Vector2(15, 0)
+texture = ExtResource("1_wkw1j")
+offset = Vector2(-30, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_wlibg")
+debug_color = Color(1, 0, 0, 0.419608)
