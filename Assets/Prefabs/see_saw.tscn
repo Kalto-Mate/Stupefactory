@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://caci8hk0t1ri5"]
+[gd_scene load_steps=9 format=3 uid="uid://caci8hk0t1ri5"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/SeeSaw.gd" id="1_g180m"]
 [ext_resource type="Texture2D" uid="uid://c8n6s8mm6xind" path="res://Assets/Debug/SeeSaw.png" id="2_xntva"]
+[ext_resource type="PackedScene" uid="uid://v5pyfecn7wrx" path="res://Assets/Prefabs/wheel.tscn" id="3_6qmho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xe2bx"]
 custom_solver_bias = 1.0
@@ -74,3 +75,9 @@ libraries = {
 "": SubResource("AnimationLibrary_3ykoe")
 }
 speed_scale = 0.1
+
+[node name="Wheel" parent="." instance=ExtResource("3_6qmho")]
+position = Vector2(-203, 0)
+
+[node name="Wheel2" parent="." instance=ExtResource("3_6qmho")]
+position = Vector2(203, 0)

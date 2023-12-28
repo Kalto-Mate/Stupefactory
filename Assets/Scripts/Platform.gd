@@ -6,9 +6,6 @@ func _ready():
 	ExemptArea.body_entered.connect(_ItemEnteredPlatform)
 	ExemptArea.body_exited.connect(_ItemExitedPlatform)
 
-func _physics_process(delta):
-	pass
-
 func _ItemEnteredPlatform(Item:Node2D):
 	if Item.is_class("ItemClass"):
 		Item.isOnPlatform = true

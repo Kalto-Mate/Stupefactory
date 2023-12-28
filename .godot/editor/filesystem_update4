@@ -2,3 +2,12 @@ res://Assets/Scenes/main.scn
 res://Assets/Prefabs/InputMachine.tscn
 res://Assets/Prefabs/ItemToSort.tscn
 res://Assets/Scripts/Item.gd
+res://Assets/Scripts/input_machine.gd
+res://Assets/Scripts/spawnSystem.gd
+res://Assets/Scripts/enums.gd
+res://Assets/Scripts/PlayerInput.gd
+res://Assets/Scripts/Platform.gd
+res://Assets/Prefabs/wheel.tscn
+res://Assets/Prefabs/see_saw.tscn
+res://Assets/Scripts/wheel.gd
+res://Assets/Prefabs/Platform.res

@@ -1,9 +1,9 @@
 extends CharacterBody2D
 class_name ItemClass
 
-@export var Shape : Enums.Shape = Enums.Shape.Triangular
-@export var Family: Enums.Family = Enums.Family.Cars
-@export var Colour: Enums.Colour = Enums.Colour.Orange
+@export var Shape : Enums.Shape
+@export var Family: Enums.Family
+@export var Colour: Enums.Colour
 
 const gravity : float = 1000
 var walkSpeed : float = 30
@@ -19,10 +19,11 @@ var speedDecrement : float = 0
 
 func _ready():
 	currentWalkSpeed = walkSpeed
-	_randomizeSelf()
+	
 	#Signals to globally control walker atributes
 	Signals.walkSpeedChanged.connect(_setBaseSpeed)
 	Signals.seeSawIsMoving.connect(_PauseWalking)
+	self._randomizeSelf()
 
 func _physics_process(DELTA):
 	
@@ -49,14 +50,14 @@ func _PauseWalking(state:bool):
 func _randomizeSelf():
 	var randShape : int = randi_range(0,SpriteSheets.size()-1)
 	self.sprite.texture = SpriteSheets[randShape]
-	self.Shape = Enums.Shape.keys()[randShape]
+	self.Shape = randShape
 	
 	var randColour : int = randi_range(0,Enums.Colour.size()-1)
 	self.sprite.frame_coords.x = randColour
-	self.Colour = randColour as Enums.Colour
+	self.Colour = randColour
 	
 	var randFamily : int = randi_range(0,Enums.Family.size()-1)
 	self.sprite.frame_coords.y = randFamily
-	self.Family = randFamily as Enums.Family
+	self.Family = randFamily
 	
 	#print ("Selfrand into [",Enums.Shape.keys()[randShape],Enums.Colour.keys()[randColour],Enums.Family.keys()[randFamily],"]")
