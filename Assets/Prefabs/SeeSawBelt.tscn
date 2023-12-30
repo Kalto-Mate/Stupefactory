@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnklean7hh83w"]
+
+[ext_resource type="Texture2D" uid="uid://bukp3at2obod3" path="res://Assets/Sprites/Conveyor.png" id="1_bgidt"]
+[ext_resource type="Script" path="res://Assets/Scripts/Belt.gd" id="2_gj7io"]
+
+[sub_resource type="Animation" id="Animation_f2x36"]
+resource_name = "scroll_texture"
+length = 0.3333
+loop_mode = 1
+step = 0.0001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(10, 0, 300, 10), Rect2(0, 0, 300, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_8orun"]
+resource_name = "scroll_texture_2"
+length = 0.3333
+loop_mode = 1
+step = 0.0001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(10, 0, 400, 10), Rect2(0, 0, 400, 10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nk0tf"]
+_data = {
+"scroll_texture": SubResource("Animation_f2x36"),
+"scroll_texture_2": SubResource("Animation_8orun")
+}
+
+[node name="TopBelt" type="Sprite2D" node_paths=PackedStringArray("animator")]
+texture_repeat = 2
+position = Vector2(0, -6)
+texture = ExtResource("1_bgidt")
+region_enabled = true
+region_rect = Rect2(10, 0, 400, 10)
+script = ExtResource("2_gj7io")
+animator = NodePath("AnimationPlayer")
+animationName = "scroll_texture_2"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nk0tf")
+}

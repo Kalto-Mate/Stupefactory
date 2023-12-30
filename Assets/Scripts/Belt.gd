@@ -1,8 +1,9 @@
 extends Sprite2D
 @export var animator : AnimationPlayer
+@export var animationName : String
 
 func _ready():
-	animator.play("Rotate_clockwise")
+	animator.play(animationName)
 	Signals.gameSpeedChanged.connect(_changeAnimSpeed)
 
 func _changeAnimSpeed(newSpeed: float):

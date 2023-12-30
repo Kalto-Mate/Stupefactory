@@ -15,3 +15,8 @@ func PollInput():
 		Signals.pi_tiltPositive.emit()
 	if Input.is_action_just_pressed("Tilt_negative"):
 		Signals.pi_tiltNegative.emit()
+	# DEBUG BINDS
+	if Input.is_action_just_pressed("Debug_increaseGameSpeed"):
+		Globals.increaseGameSpeedBy(0.1)
+	if Input.is_action_just_pressed("Debug_decreaseGameSpeed"):
+		Globals.increaseGameSpeedBy(-0.1)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://caci8hk0t1ri5"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/SeeSaw.gd" id="1_g180m"]
-[ext_resource type="Texture2D" uid="uid://c8n6s8mm6xind" path="res://Assets/Debug/SeeSaw.png" id="2_xntva"]
+[ext_resource type="PackedScene" uid="uid://dnklean7hh83w" path="res://Assets/Prefabs/SeeSawBelt.tscn" id="2_2iy53"]
 [ext_resource type="PackedScene" uid="uid://v5pyfecn7wrx" path="res://Assets/Prefabs/wheel.tscn" id="3_6qmho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xe2bx"]
@@ -64,9 +64,6 @@ _data = {
 position = Vector2(320, 178.5)
 script = ExtResource("1_g180m")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_xntva")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xe2bx")
 
@@ -76,8 +73,19 @@ libraries = {
 }
 speed_scale = 0.1
 
-[node name="Wheel" parent="." instance=ExtResource("3_6qmho")]
-position = Vector2(-203, 0)
+[node name="Visuals" type="Node2D" parent="."]
 
-[node name="Wheel2" parent="." instance=ExtResource("3_6qmho")]
+[node name="TopBelt" parent="Visuals" instance=ExtResource("2_2iy53")]
+position = Vector2(0, -6.5)
+
+[node name="BottomBelt" parent="Visuals" instance=ExtResource("2_2iy53")]
+position = Vector2(0, 6.5)
+rotation = 3.14159
+
+[node name="Wheel" parent="Visuals" instance=ExtResource("3_6qmho")]
+position = Vector2(-203, 0)
+rotation = 4.46638e-06
+
+[node name="Wheel2" parent="Visuals" instance=ExtResource("3_6qmho")]
 position = Vector2(203, 0)
+rotation = 4.46638e-06

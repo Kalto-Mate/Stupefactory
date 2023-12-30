@@ -11,3 +11,10 @@ res://Assets/Prefabs/wheel.tscn
 res://Assets/Prefabs/see_saw.tscn
 res://Assets/Scripts/wheel.gd
 res://Assets/Prefabs/Platform.res
+res://Assets/Prefabs/PlatformBelt.tscn
+res://Assets/Scripts/PlatformBelt.gd
+res://Assets/Prefabs/SeeSawBelt.tscn
+res://Assets/Scripts/Belt.gd
+res://Assets/Scripts/globals.gd
+res://Assets/Scripts/signals.gd
+res://Assets/Scripts/DebugPrinter.gd

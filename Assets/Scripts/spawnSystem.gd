@@ -1,13 +1,16 @@
 extends Node2D
 @export var spawnTimer : Timer
+const baseSpawnInterval : float = 3
 @export var Spawners: Array[Node2D]
 @export var ItemPrefab: PackedScene
 var SpawnedItems: Array[ItemClass]
 var pauseSpawning: bool = false
 
 func _ready():
+	spawnWalker()
 	spawnTimer.timeout.connect(spawnWalker)
-	#Signals.seeSawIsMoving.connect(pauseTimer)
+	spawnTimer.wait_time = baseSpawnInterval
+	Signals.gameSpeedChanged.connect(_updateSpawnTimer)
 
 func spawnWalker():
 	
@@ -19,6 +22,9 @@ func spawnWalker():
 	SpawnedItems.append(newItem)
 	newItem.global_position = chosenSpawner.global_position
 	add_sibling(newItem)
+
+func _updateSpawnTimer(newGameSpeed:float):
+	spawnTimer.wait_time = baseSpawnInterval / newGameSpeed
 
 func pauseTimer(state:bool):
 	spawnTimer.paused = state

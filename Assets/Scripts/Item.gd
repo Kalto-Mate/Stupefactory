@@ -6,8 +6,11 @@ class_name ItemClass
 @export var Colour: Enums.Colour
 
 const gravity : float = 1000
-var walkSpeed : float = 30
-var currentWalkSpeed : float
+const baseWalkSpeed : float = 30
+
+var currentBaseSpeed : float
+var currentGameSpeed : float
+var solvedWalkSpeed : float = 1
 
 var isOnPlatform : bool = true
 var speedDecrement : float = 0
@@ -18,18 +21,17 @@ var speedDecrement : float = 0
 @export var SpriteSheets: Array[Texture2D] #Assumed Order Triangle, Square, Round
 
 func _ready():
-	currentWalkSpeed = walkSpeed
-	
-	#Signals to globally control walker atributes
-	Signals.walkSpeedChanged.connect(_setBaseSpeed)
 	Signals.seeSawIsMoving.connect(_PauseWalking)
+	Signals.gameSpeedChanged.connect(_updateCurrentBaseSpeed)
+	currentGameSpeed = Globals.Game_Speed
+	currentBaseSpeed = baseWalkSpeed * currentGameSpeed
 	self._randomizeSelf()
 
 func _physics_process(DELTA):
 	
 	#==FAKE GRAVITY==
 	velocity.y += gravity * DELTA
-	velocity.x = currentWalkSpeed
+	velocity.x = currentBaseSpeed
 	
 	#The above does nothing by itself, we need to make the movement happen manually:
 	self.move_and_slide()
@@ -38,15 +40,17 @@ func _physics_process(DELTA):
 	var normal = raycast.get_collision_normal()
 	sprite.rotation = -normal.angle_to(Vector2.UP) #set rotation to the angle "left" to be aligned with UP
 
-func _setBaseSpeed(value:float): # SUBSCRIBED TO SIGNAL walkSpeedChanged
-	self.walkSpeed = value
-
 func _PauseWalking(state:bool):
 	if state==true && !self.isOnPlatform:
-		currentWalkSpeed = walkSpeed * speedDecrement
+		currentBaseSpeed = baseWalkSpeed * speedDecrement
 	else:
-		currentWalkSpeed = walkSpeed
+		currentBaseSpeed = baseWalkSpeed * currentGameSpeed
 	pass
+
+func _updateCurrentBaseSpeed(newGameSpeed:float):
+	currentGameSpeed = newGameSpeed
+	currentBaseSpeed = baseWalkSpeed * currentGameSpeed
+
 func _randomizeSelf():
 	var randShape : int = randi_range(0,SpriteSheets.size()-1)
 	self.sprite.texture = SpriteSheets[randShape]
