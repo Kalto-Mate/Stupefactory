@@ -1,5 +1,6 @@
-Label
 Node2D
+Node
+Label
 AnimationPlayer
 Sprite2D
 TextureRect
@@ -11,4 +12,3 @@ CharacterBody2D
 RigidBody2D
 AnimatableBody2D
 StaticBody2D
-Node

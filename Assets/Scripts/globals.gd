@@ -1,7 +1,7 @@
 extends Node
 
 var Game_Speed : float = 1
-const  _min_Game_Speed : float = 1
+const  _min_Game_Speed : float = 0
 const  _max_Game_Speed : float = 4
 
 func increaseGameSpeedBy(ammount : float):

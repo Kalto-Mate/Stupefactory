@@ -18,3 +18,4 @@ res://Assets/Scripts/Belt.gd
 res://Assets/Scripts/globals.gd
 res://Assets/Scripts/signals.gd
 res://Assets/Scripts/DebugPrinter.gd
+res://Assets/Prefabs/spawner.tscn

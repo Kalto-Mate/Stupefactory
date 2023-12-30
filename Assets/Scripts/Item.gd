@@ -54,14 +54,17 @@ func _updateCurrentBaseSpeed(newGameSpeed:float):
 func _randomizeSelf():
 	var randShape : int = randi_range(0,SpriteSheets.size()-1)
 	self.sprite.texture = SpriteSheets[randShape]
+	@warning_ignore("int_as_enum_without_cast")
 	self.Shape = randShape
 	
 	var randColour : int = randi_range(0,Enums.Colour.size()-1)
 	self.sprite.frame_coords.x = randColour
+	@warning_ignore("int_as_enum_without_cast")
 	self.Colour = randColour
 	
 	var randFamily : int = randi_range(0,Enums.Family.size()-1)
 	self.sprite.frame_coords.y = randFamily
+	@warning_ignore("int_as_enum_without_cast")
 	self.Family = randFamily
 	
 	#print ("Selfrand into [",Enums.Shape.keys()[randShape],Enums.Colour.keys()[randColour],Enums.Family.keys()[randFamily],"]")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bji568ss7olvn"]
+[gd_scene load_steps=7 format=3 uid="uid://bji568ss7olvn"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/input_machine.gd" id="1_ln6v6"]
 [ext_resource type="Texture2D" uid="uid://c1a2ogqorsbxi" path="res://Assets/Debug/Deleter.png" id="1_wkw1j"]
 [ext_resource type="Texture2D" uid="uid://clrj0sojq6jwm" path="res://Assets/Sprites/InputMachine.png" id="3_lb1ii"]
 [ext_resource type="Texture2D" uid="uid://fbhm5cav0y4f" path="res://Assets/Sprites/Monitor Symbols.png" id="3_mm7pn"]
+[ext_resource type="Texture2D" uid="uid://c72kuc2nas00v" path="res://Assets/Sprites/InputMachineBacking.png" id="4_3cnil"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlibg"]
 size = Vector2(30, 30)
@@ -12,15 +13,21 @@ size = Vector2(30, 30)
 script = ExtResource("1_ln6v6")
 DetectionArea = NodePath("Area2D")
 
-[node name="Visuals" type="Sprite2D" parent="."]
-position = Vector2(-90, -30)
-texture = ExtResource("3_lb1ii")
-
 [node name="Monitor" type="Sprite2D" parent="."]
 position = Vector2(-60, -30)
 texture = ExtResource("3_mm7pn")
 hframes = 3
 vframes = 4
+
+[node name="Machine" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(-90, -30)
+texture = ExtResource("3_lb1ii")
+
+[node name="Backing" type="Sprite2D" parent="."]
+z_index = -11
+position = Vector2(-90, -30)
+texture = ExtResource("4_3cnil")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-30, 0)

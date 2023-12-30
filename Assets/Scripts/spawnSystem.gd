@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 @export var spawnTimer : Timer
 const baseSpawnInterval : float = 3
 @export var Spawners: Array[Node2D]
@@ -7,7 +7,6 @@ var SpawnedItems: Array[ItemClass]
 var pauseSpawning: bool = false
 
 func _ready():
-	spawnWalker()
 	spawnTimer.timeout.connect(spawnWalker)
 	spawnTimer.wait_time = baseSpawnInterval
 	Signals.gameSpeedChanged.connect(_updateSpawnTimer)

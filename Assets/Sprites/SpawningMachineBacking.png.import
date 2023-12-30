@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm8yi5107js3d"
-path="res://.godot/imported/Items.png-b2d368826ae8449c383704ac1a8476df.ctex"
+uid="uid://ejs7ptyvc5i2"
+path="res://.godot/imported/SpawningMachineBacking.png-641bbbbfd4a02e41d7231d50002b5feb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Debug/Items.png"
-dest_files=["res://.godot/imported/Items.png-b2d368826ae8449c383704ac1a8476df.ctex"]
+source_file="res://Assets/Sprites/SpawningMachineBacking.png"
+dest_files=["res://.godot/imported/SpawningMachineBacking.png-641bbbbfd4a02e41d7231d50002b5feb.ctex"]
 
 [params]
 

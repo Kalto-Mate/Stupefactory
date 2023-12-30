@@ -20,6 +20,7 @@ sprite = NodePath("Sprite2D")
 SpriteSheets = Array[Texture2D]([ExtResource("2_hm4or"), ExtResource("3_ri7fv"), ExtResource("4_maewk")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
 texture = ExtResource("2_m343v")
 hframes = 3
 vframes = 3
