@@ -2,6 +2,7 @@ extends Node2D
 class_name  InputMachine
 
 @export var DetectionArea: Area2D
+@export var Screen : Sprite2D
 
 var SortMode : Enums.SortMode
 
@@ -16,14 +17,17 @@ func _ready():
 func SetSortByShape(_Shape: Enums.Shape):
 	self.SortMode = Enums.SortMode.Shape
 	self.Shape = _Shape
+	Screen.frame_coords = Vector2(_Shape,Enums.SortMode.Shape)
 
 func SetSortByFamily(_Family: Enums.Family):
 	self.SortMode = Enums.SortMode.Family
 	self.Family = _Family
+	Screen.frame_coords = Vector2(_Family,Enums.SortMode.Family)
 
 func SetSortByColour(_Colour: Enums.Colour):
 	self.SortMode = Enums.SortMode.Colour
 	self.Colour = _Colour
+	Screen.frame_coords = Vector2(_Colour,Enums.SortMode.Colour)
 
 func _processItem(body:Node2D):
 	var Item = body as ItemClass
@@ -32,9 +36,10 @@ func _processItem(body:Node2D):
 		print(Item.name, " is the correct type, score points")
 	else:
 		print(Item.name, " is NOT the correct type, deduct points")
-
-	Item.queue_free()
 	
+	Item.queue_free()
+	Signals.objectInserted.emit()
+
 func _ItemIsCorrectType (Item:ItemClass) -> bool :
 	var result : bool = false
 	match self.SortMode:

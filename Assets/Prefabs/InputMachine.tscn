@@ -9,15 +9,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlibg"]
 size = Vector2(30, 30)
 
-[node name="InputMachine" type="Node2D" node_paths=PackedStringArray("DetectionArea")]
+[node name="InputMachine" type="Node2D" node_paths=PackedStringArray("DetectionArea", "Screen")]
 script = ExtResource("1_ln6v6")
 DetectionArea = NodePath("Area2D")
+Screen = NodePath("Screen")
 
-[node name="Monitor" type="Sprite2D" parent="."]
-position = Vector2(-60, -30)
+[node name="Screen" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(-74, -46)
 texture = ExtResource("3_mm7pn")
 hframes = 3
 vframes = 4
+frame = 10
 
 [node name="Machine" type="Sprite2D" parent="."]
 z_index = -5

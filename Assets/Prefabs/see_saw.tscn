@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://caci8hk0t1ri5"]
+[gd_scene load_steps=11 format=3 uid="uid://caci8hk0t1ri5"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/SeeSaw.gd" id="1_g180m"]
 [ext_resource type="PackedScene" uid="uid://dnklean7hh83w" path="res://Assets/Prefabs/SeeSawBelt.tscn" id="2_2iy53"]
+[ext_resource type="Texture2D" uid="uid://tttc52arjxvs" path="res://Assets/Sprites/SeeSaw.png" id="2_sxke4"]
 [ext_resource type="PackedScene" uid="uid://v5pyfecn7wrx" path="res://Assets/Prefabs/wheel.tscn" id="3_6qmho"]
+[ext_resource type="Texture2D" uid="uid://vvanpi8hvfo8" path="res://Assets/Sprites/SeeSaw Rotor.png" id="4_76qb0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xe2bx"]
 custom_solver_bias = 1.0
@@ -65,6 +67,7 @@ position = Vector2(320, 178.5)
 script = ExtResource("1_g180m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -3
 shape = SubResource("RectangleShape2D_xe2bx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -75,17 +78,35 @@ speed_scale = 0.1
 
 [node name="Visuals" type="Node2D" parent="."]
 
+[node name="SeeSaw" type="Sprite2D" parent="Visuals"]
+z_index = -2
+texture = ExtResource("2_sxke4")
+
 [node name="TopBelt" parent="Visuals" instance=ExtResource("2_2iy53")]
+z_index = -1
 position = Vector2(0, -6.5)
 
 [node name="BottomBelt" parent="Visuals" instance=ExtResource("2_2iy53")]
+z_index = -1
 position = Vector2(0, 6.5)
 rotation = 3.14159
 
+[node name="SeeSawRotor" type="Sprite2D" parent="Visuals"]
+position = Vector2(0, -2)
+texture = ExtResource("4_76qb0")
+
+[node name="SeeSawRotor2" type="Sprite2D" parent="Visuals"]
+z_index = -11
+position = Vector2(0, -2)
+rotation = 3.14159
+texture = ExtResource("4_76qb0")
+
 [node name="Wheel" parent="Visuals" instance=ExtResource("3_6qmho")]
+z_index = -1
 position = Vector2(-203, 0)
 rotation = 4.46638e-06
 
 [node name="Wheel2" parent="Visuals" instance=ExtResource("3_6qmho")]
+z_index = -1
 position = Vector2(203, 0)
 rotation = 4.46638e-06

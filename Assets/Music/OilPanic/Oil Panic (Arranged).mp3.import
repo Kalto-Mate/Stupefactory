@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3ecy0dfr8vql"
+path="res://.godot/imported/Oil Panic (Arranged).mp3-3facd86b91730b1eb8aa11ba34d3327b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/OilPanic/Oil Panic (Arranged).mp3"
+dest_files=["res://.godot/imported/Oil Panic (Arranged).mp3-3facd86b91730b1eb8aa11ba34d3327b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://boktlojopo8i1"
+path="res://.godot/imported/SongLoop.mp3-9be1bb62c00cfa0841e87a9218d765c3.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Cement Factory/SongLoop.mp3"
+dest_files=["res://.godot/imported/SongLoop.mp3-9be1bb62c00cfa0841e87a9218d765c3.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
