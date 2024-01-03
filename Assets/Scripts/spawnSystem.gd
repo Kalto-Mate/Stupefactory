@@ -1,9 +1,8 @@
 extends Node
 @export var spawnTimer : Timer
 const baseSpawnInterval : float = 7
-@export var Spawners: Array[Node2D]
-@export var ItemPrefab: PackedScene
-var SpawnedItems: Array[ItemClass]
+@export var Spawners: Array[SpawnerClass]
+
 var pauseSpawning: bool = false
 
 func _ready():
@@ -16,19 +15,12 @@ func spawnWalker():
 	
 	var chosenSpawnerID = randi() % Spawners.size()
 	var chosenSpawner : Node2D = Spawners[chosenSpawnerID]
+	chosenSpawner.spawnItem()
 	
 	#print("Spawning walker type ",chosenWalkerID," at spawnPoint ", chosenSpawnerID)
-	var newItem = ItemPrefab.instantiate()
-	SpawnedItems.append(newItem)
-	newItem.global_position = chosenSpawner.global_position
-	add_sibling(newItem)
 
 func _updateSpawnTimer(newGameSpeed:float):
 	spawnTimer.wait_time = baseSpawnInterval / newGameSpeed
 
 func pauseTimer(state:bool):
 	spawnTimer.paused = state
-
-func despawnAllWalkers():
-	for Item in SpawnedItems:
-		Item.queue_free()

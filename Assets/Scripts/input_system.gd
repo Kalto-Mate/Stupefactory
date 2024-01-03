@@ -34,8 +34,8 @@ func randomiseSortParameters():
 			for n in range(0,InputMachines.size()):
 				InputMachines[n].SetSortByColour(n)
 				print("<<<",n,">>>")
-	
 
+	
 
 
 

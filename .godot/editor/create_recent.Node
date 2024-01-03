@@ -1,8 +1,8 @@
+AnimationPlayer
 AudioStreamPlayer2D
 Node
 Node2D
 Label
-AnimationPlayer
 Sprite2D
 TextureRect
 RayCast2D
@@ -12,4 +12,3 @@ Timer
 CharacterBody2D
 RigidBody2D
 AnimatableBody2D
-StaticBody2D

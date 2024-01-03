@@ -8,7 +8,9 @@ signal pi_tiltNegative
 signal seeSawIsMoving(status:bool)
 signal gameSpeedChanged(value:float)
 signal objectInserted
+signal objectDeleted
 signal reachedInsertionLimit
+signal aboutToReachInsertionLimit
 
 #Scoring
 signal wrongSort

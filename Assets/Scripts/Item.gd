@@ -6,14 +6,14 @@ class_name ItemClass
 @export var Colour: Enums.Colour
 
 const gravity : float = 1000
-const baseWalkSpeed : float = 30
+const baseWalkSpeed : float = 21
 
 var currentBaseSpeed : float
 var currentGameSpeed : float
 var solvedWalkSpeed : float = 1
 
 var isOnPlatform : bool = true
-var speedDecrement : float = 0
+var speedDecrement : float = 1
 
 @export var raycast : RayCast2D
 @export var sprite : Sprite2D
@@ -42,7 +42,8 @@ func _physics_process(DELTA):
 
 func _PauseWalking(state:bool):
 	if state==true && !self.isOnPlatform:
-		currentBaseSpeed = baseWalkSpeed * speedDecrement
+		currentBaseSpeed = baseWalkSpeed * currentGameSpeed
+		#currentBaseSpeed = baseWalkSpeed * speedDecrement
 	else:
 		currentBaseSpeed = baseWalkSpeed * currentGameSpeed
 	pass

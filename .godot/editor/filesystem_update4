@@ -21,3 +21,4 @@ res://Assets/Scripts/DebugPrinter.gd
 res://Assets/Prefabs/spawner.tscn
 res://Assets/Scripts/score_system.gd
 res://Assets/Scripts/input_system.gd
+res://Assets/Scripts/spawner.gd
