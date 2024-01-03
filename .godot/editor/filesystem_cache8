@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1704214693
+::res://::1704325409
 icon.svg::CompressedTexture2D::1850917042875202754::1703004071::1703004084::1::::<><>::
 ::res://Assets/::1703608499
-::res://Assets/Debug/::1704323235
+::res://Assets/Debug/::1704323248
 Deleter.png::CompressedTexture2D::6599416002410901754::1703964188::1703964601::1::::<><>::
 Detector.png::CompressedTexture2D::6476629835502645634::1704323235::1704323248::1::::<><>::
 Layout.png::CompressedTexture2D::6168681604318270927::1703804018::1703804021::1::::<><>::
@@ -17,30 +17,30 @@ SongLoop.mp3::AudioStreamMP3::3390882288648540302::1704049290::1704049547::1::::
 ::res://Assets/Music/OilPanic/::1704050527
 Oil Panic (Arranged).mp3::AudioStreamMP3::6746552111275981943::1510253369::1704050486::1::::<><>::
 Oil Panic (Loop).mp3::AudioStreamMP3::2250040396415304215::1704050485::1704050527::1::::<><>::
-::res://Assets/Prefabs/::1704322685
-InputMachine.tscn::PackedScene::3036513929800114739::1704322685::0::1::::<><>::res://Assets/Scripts/input_machine.gd<>uid://c1a2ogqorsbxi::::res://Assets/Debug/Deleter.png<>uid://clrj0sojq6jwm::::res://Assets/Sprites/InputMachine.png<>uid://fbhm5cav0y4f::::res://Assets/Sprites/Monitor Symbols.png<>uid://c72kuc2nas00v::::res://Assets/Sprites/InputMachineBacking.png
-ItemToSort.tscn::PackedScene::9049927583466523947::1704322685::0::1::::<><>::res://Assets/Scripts/Item.gd<>uid://nluf5ambpd4w::::res://Assets/Sprites/Triangular.png<>uid://bamcish5s6kqu::::res://Assets/Debug/ObjectDebug.png<>uid://cbm8l6rhlfqlw::::res://Assets/Sprites/Square.png<>uid://cru7b50ox4y4j::::res://Assets/Sprites/Round.png
-Platform.res::PackedScene::8942267183275519431::1704322685::0::1::::<><>::res://Assets/Scripts/Platform.gd<>uid://bnq73siyrh5xf::::res://Assets/Sprites/Platform.png<>uid://cft8jkm7n6f1d::::res://Assets/Prefabs/PlatformBelt.tscn<>uid://v5pyfecn7wrx::::res://Assets/Prefabs/wheel.tscn
+::res://Assets/Prefabs/::1704325176
+InputMachine.tscn::PackedScene::3036513929800114739::1704325176::0::1::::<><>::res://Assets/Scripts/input_machine.gd<>uid://c1a2ogqorsbxi::::res://Assets/Debug/Deleter.png<>uid://clrj0sojq6jwm::::res://Assets/Sprites/InputMachine.png<>uid://fbhm5cav0y4f::::res://Assets/Sprites/Monitor Symbols.png<>uid://c72kuc2nas00v::::res://Assets/Sprites/InputMachineBacking.png<>uid://cyjlfadk30esg::::res://Assets/Debug/Detector.png
+ItemToSort.tscn::PackedScene::9049927583466523947::1704325176::0::1::::<><>::res://Assets/Scripts/Item.gd<>uid://nluf5ambpd4w::::res://Assets/Sprites/Triangular.png<>uid://bamcish5s6kqu::::res://Assets/Debug/ObjectDebug.png<>uid://cbm8l6rhlfqlw::::res://Assets/Sprites/Square.png<>uid://cru7b50ox4y4j::::res://Assets/Sprites/Round.png
+Platform.res::PackedScene::8942267183275519431::1704325176::0::1::::<><>::res://Assets/Scripts/Platform.gd<>uid://bnq73siyrh5xf::::res://Assets/Sprites/Platform.png<>uid://cft8jkm7n6f1d::::res://Assets/Prefabs/PlatformBelt.tscn<>uid://v5pyfecn7wrx::::res://Assets/Prefabs/wheel.tscn
 PlatformBelt.tscn::PackedScene::5165029041053622611::1703963295::0::1::::<><>::uid://bukp3at2obod3::::res://Assets/Sprites/Conveyor.png<>res://Assets/Scripts/Belt.gd
 SeeSawBelt.tscn::PackedScene::8093035847556432186::1703963295::0::1::::<><>::uid://bukp3at2obod3::::res://Assets/Sprites/Conveyor.png<>res://Assets/Scripts/Belt.gd
-see_saw.tscn::PackedScene::4777515174309127954::1704322685::0::1::::<><>::res://Assets/Scripts/SeeSaw.gd<>uid://dnklean7hh83w::::res://Assets/Prefabs/SeeSawBelt.tscn<>uid://tttc52arjxvs::::res://Assets/Sprites/SeeSaw.png<>uid://v5pyfecn7wrx::::res://Assets/Prefabs/wheel.tscn<>uid://vvanpi8hvfo8::::res://Assets/Sprites/SeeSaw Rotor.png
-spawner.tscn::PackedScene::3559642194206557667::1704322685::0::1::::<><>::uid://c6wc7ds88nue2::::res://Assets/Sprites/Siren.png<>uid://cqe8u7sijyaan::::res://Assets/Debug/Spawner.png<>res://Assets/Scripts/spawner.gd<>uid://d1638q06r7ou2::::res://Assets/Prefabs/ItemToSort.tscn<>uid://ejs7ptyvc5i2::::res://Assets/Sprites/SpawningMachineBacking.png
+see_saw.tscn::PackedScene::4777515174309127954::1704325176::0::1::::<><>::res://Assets/Scripts/SeeSaw.gd<>uid://dnklean7hh83w::::res://Assets/Prefabs/SeeSawBelt.tscn<>uid://tttc52arjxvs::::res://Assets/Sprites/SeeSaw.png<>uid://v5pyfecn7wrx::::res://Assets/Prefabs/wheel.tscn<>uid://vvanpi8hvfo8::::res://Assets/Sprites/SeeSaw Rotor.png
+spawner.tscn::PackedScene::3559642194206557667::1704325176::0::1::::<><>::uid://c6wc7ds88nue2::::res://Assets/Sprites/Siren.png<>uid://cqe8u7sijyaan::::res://Assets/Debug/Spawner.png<>res://Assets/Scripts/spawner.gd<>uid://d1638q06r7ou2::::res://Assets/Prefabs/ItemToSort.tscn<>uid://ejs7ptyvc5i2::::res://Assets/Sprites/SpawningMachineBacking.png
 wheel.tscn::PackedScene::1536850931871183169::1703963416::0::1::::<><>::uid://b4utlaq1d6i3i::::res://Assets/Sprites/wheel.png<>res://Assets/Scripts/wheel.gd
-::res://Assets/Scenes/::1704322684
-main.scn::PackedScene::6975660524273726320::1704322684::0::1::::<><>::uid://ct5fjxgrakhu2::::res://Assets/Debug/Layout.png<>uid://bn74xduf5aj3::::res://Assets/Sprites/BG1.png<>uid://ba063gyehr8sb::::res://Assets/Sprites/OverlapDecor.png<>res://Assets/Scripts/DebugPrinter.gd<>res://Assets/Scripts/spawnSystem.gd<>uid://bqyk10vcrb7vb::::res://Assets/Prefabs/spawner.tscn<>res://Assets/Scripts/input_system.gd<>uid://bji568ss7olvn::::res://Assets/Prefabs/InputMachine.tscn<>res://Assets/Scripts/PlayerInput.gd<>uid://d0nx3meuivrgp::::res://Assets/Prefabs/Platform.res<>uid://caci8hk0t1ri5::::res://Assets/Prefabs/see_saw.tscn<>uid://7b63pdqutek2::::res://Assets/Music/OilPanic/Oil Panic (Loop).mp3
-::res://Assets/Scripts/::1704322681
+::res://Assets/Scenes/::1704325176
+main.scn::PackedScene::6975660524273726320::1704325176::0::1::::<><>::uid://ct5fjxgrakhu2::::res://Assets/Debug/Layout.png<>uid://bn74xduf5aj3::::res://Assets/Sprites/BG1.png<>uid://ba063gyehr8sb::::res://Assets/Sprites/OverlapDecor.png<>res://Assets/Scripts/DebugPrinter.gd<>res://Assets/Scripts/spawnSystem.gd<>uid://bqyk10vcrb7vb::::res://Assets/Prefabs/spawner.tscn<>res://Assets/Scripts/input_system.gd<>uid://bji568ss7olvn::::res://Assets/Prefabs/InputMachine.tscn<>res://Assets/Scripts/PlayerInput.gd<>uid://d0nx3meuivrgp::::res://Assets/Prefabs/Platform.res<>uid://caci8hk0t1ri5::::res://Assets/Prefabs/see_saw.tscn<>uid://7b63pdqutek2::::res://Assets/Music/OilPanic/Oil Panic (Loop).mp3
+::res://Assets/Scripts/::1704325175
 Belt.gd::GDScript::-1::1703961331::0::1::::<>Sprite2D<>::
 DebugPrinter.gd::GDScript::-1::1703962490::0::1::::<>Label<>::
 enums.gd::GDScript::-1::1704216370::0::1::::<>Node<>::
-globals.gd::GDScript::-1::1704322425::0::1::::<>Node<>::
-input_machine.gd::GDScript::-1::1704322681::0::1::::InputMachine<>Node2D<>::
+globals.gd::GDScript::-1::1704325120::0::1::::<>Node<>::
+input_machine.gd::GDScript::-1::1704325175::0::1::::InputMachine<>Node2D<>::
 input_system.gd::GDScript::-1::1704322559::0::1::::<>Node<>::
 Item.gd::GDScript::-1::1704294233::0::1::::ItemClass<>CharacterBody2D<>::
 Platform.gd::GDScript::-1::1703957212::0::1::::<>Node2D<>::
 PlayerInput.gd::GDScript::-1::1703961513::0::1::::<>Node<>::
-spawner.gd::GDScript::-1::1704295951::0::1::::SpawnerClass<>Node2D<>::
 SeeSaw.gd::GDScript::-1::1703364737::0::1::::<>AnimatableBody2D<>::
-signals.gd::GDScript::-1::1704322575::0::1::::<>Node<>::
+signals.gd::GDScript::-1::1704325038::0::1::::<>Node<>::
+spawner.gd::GDScript::-1::1704295951::0::1::::SpawnerClass<>Node2D<>::
 spawnSystem.gd::GDScript::-1::1704295921::0::1::::<>Node<>::
 wheel.gd::GDScript::-1::1703961357::0::1::::<>Sprite2D<>::
 ::res://Assets/Sprites/::1704295120

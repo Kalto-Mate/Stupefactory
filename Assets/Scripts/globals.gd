@@ -10,8 +10,6 @@ const RESET_Score : int = 0
 var InsertionCounter : int  #Keeps tracks of the number of items that made it to a machine
 const RESET_InsertionCounter : int = 0
 
-var DeletionCounter: int
-const RESET_DeletionCounter : int = 0
 #CONFIG====================================================================================
 const _min_Game_Speed : float = 0
 const _max_Game_Speed : float = 4
@@ -22,7 +20,6 @@ func _ready():
 	increaseGameSpeedBy(0.5)
 	
 	Signals.objectInserted.connect(increaseInsertionCounter)
-	Signals.objectDeleted.connect(increaseDeletionCounter)
 	Signals.reachedInsertionLimit.connect(increaseGameSpeed)
 
 func increaseGameSpeedBy(ammount : float):
@@ -42,21 +39,16 @@ func increaseGameSpeed():
 func increaseInsertionCounter():
 	self.InsertionCounter += 1
 	
-	if self.InsertionCounter == _triggerModeChangeAt  &&   self.DeletionCounter ==  _triggerModeChangeAt-1 :
+	if self.InsertionCounter == _triggerModeChangeAt -1 :
 		Signals.aboutToReachInsertionLimit.emit()
-	if self.InsertionCounter == _triggerModeChangeAt  &&   self.DeletionCounter ==  _triggerModeChangeAt :
+	if self.InsertionCounter >= _triggerModeChangeAt :
 		Signals.reachedInsertionLimit.emit()
 		self.InsertionCounter = 0
-		self.DeletionCounter = 0
 	#DEBUG CODE
-	var DebugMessage : String = "In: " + str(self.InsertionCounter) + " Del: " + str(self.DeletionCounter)
+	var DebugMessage : String = "In: " + str(self.InsertionCounter)
 	Signals.debugPrint.emit(DebugMessage)
-
-func increaseDeletionCounter():
-	self.DeletionCounter += 1
 	
 func resetAll():
 	self.Game_Speed = RESET_Game_Speed
 	self.Score = RESET_Score
 	self.InsertionCounter = RESET_InsertionCounter
-	self.DeletionCounter = RESET_DeletionCounter

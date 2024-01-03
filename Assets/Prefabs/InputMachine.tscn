@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bji568ss7olvn"]
+[gd_scene load_steps=9 format=3 uid="uid://bji568ss7olvn"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/input_machine.gd" id="1_ln6v6"]
 [ext_resource type="Texture2D" uid="uid://c1a2ogqorsbxi" path="res://Assets/Debug/Deleter.png" id="1_wkw1j"]
 [ext_resource type="Texture2D" uid="uid://clrj0sojq6jwm" path="res://Assets/Sprites/InputMachine.png" id="3_lb1ii"]
 [ext_resource type="Texture2D" uid="uid://fbhm5cav0y4f" path="res://Assets/Sprites/Monitor Symbols.png" id="3_mm7pn"]
 [ext_resource type="Texture2D" uid="uid://c72kuc2nas00v" path="res://Assets/Sprites/InputMachineBacking.png" id="4_3cnil"]
-[ext_resource type="Texture2D" uid="uid://cyjlfadk30esg" path="res://Assets/Debug/Detector.png" id="6_w47b5"]
 
 [sub_resource type="Animation" id="Animation_5xlh5"]
 resource_name = "flash_warning"
@@ -31,9 +30,8 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlibg"]
 size = Vector2(30, 30)
 
-[node name="InputMachine" type="Node2D" node_paths=PackedStringArray("DetectionArea", "DeletionArea", "Screen", "WarningAnimator")]
+[node name="InputMachine" type="Node2D" node_paths=PackedStringArray("DeletionArea", "Screen", "WarningAnimator")]
 script = ExtResource("1_ln6v6")
-DetectionArea = NodePath("Detector")
 DeletionArea = NodePath("Deleter")
 Screen = NodePath("Screen")
 WarningAnimator = NodePath("AnimationPlayer")
@@ -83,13 +81,3 @@ offset = Vector2(-30, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deleter"]
 shape = SubResource("RectangleShape2D_wlibg")
 debug_color = Color(1, 0, 0, 0.419608)
-
-[node name="Detector" type="Area2D" parent="."]
-position = Vector2(-30, 0)
-
-[node name="Debug" type="Sprite2D" parent="Detector"]
-texture = ExtResource("6_w47b5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
-shape = SubResource("RectangleShape2D_wlibg")
-debug_color = Color(0, 0.623529, 0.529412, 0.419608)
