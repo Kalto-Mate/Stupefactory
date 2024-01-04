@@ -1,6 +1,7 @@
+AudioStreamPlayer2D
+AudioStreamPlayer
 AnimationPlayer
 Node
-AudioStreamPlayer2D
 Node2D
 Label
 Sprite2D
@@ -11,4 +12,3 @@ Area2D
 Timer
 CharacterBody2D
 RigidBody2D
-AnimatableBody2D

@@ -3,7 +3,7 @@ extends Node
 var Game_Speed : float
 var Game_Speed_STORE : float
 const RESET_Game_Speed : float = 1.5
-const gameSpeedIncrease_interval = .33333
+const gameSpeedIncrease_interval = 0.4
 
 var Score : int
 const RESET_Score : int = 0
@@ -17,7 +17,7 @@ var _triggerModeChangeAt_FLOAT : float
 #CONFIG====================================================================================
 const _min_Game_Speed : float = -1
 const _max_Game_Speed : float = 8.1
-const _triggerModeChangeAt_IncreaseInterval : float = 0.4
+const _triggerModeChangeAt_IncreaseInterval : float = 0.2
 
 func _ready():
 	resetAll()

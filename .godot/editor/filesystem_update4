@@ -11,3 +11,5 @@ res://Assets/Prefabs/ItemToSort.tscn
 res://Assets/Scripts/game_brain.gd
 res://Assets/Scripts/spawnSystem.gd
 res://Assets/Scripts/input_system.gd
+res://Assets/Scripts/song_system.gd
+res://Assets/Scripts/PlayerInput.gd
