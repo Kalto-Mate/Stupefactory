@@ -8,3 +8,6 @@ res://Assets/Prefabs/spawner.tscn
 res://Assets/Prefabs/see_saw.tscn
 res://Assets/Prefabs/Platform.res
 res://Assets/Prefabs/ItemToSort.tscn
+res://Assets/Scripts/game_brain.gd
+res://Assets/Scripts/spawnSystem.gd
+res://Assets/Scripts/input_system.gd

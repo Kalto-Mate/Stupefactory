@@ -39,9 +39,10 @@ func _processItem(body:Node2D):
 	#Check how item compares to the mode the machine is on
 	if self._ItemIsCorrectType(Item):
 		Signals.objectInserted.emit()
-		print(Item.name, " is the correct type, score points")
+		#print(Item.name, " is the correct type, score points")
 	else:
-		print(Item.name, " is NOT the correct type, deduct points")
+		pass
+		#print(Item.name, " is NOT the correct type, deduct points")
 	
 	body.queue_free()
 
@@ -50,13 +51,13 @@ func _ItemIsCorrectType (Item:ItemClass) -> bool :
 	var result : bool = false
 	match self.SortMode:
 		Enums.SortMode.Shape:
-			print("Expected: ", Enums.Shape.keys()[self.Shape]," Received: ",Enums.Shape.keys()[Item.Shape])
+			#print("Expected: ", Enums.Shape.keys()[self.Shape]," Received: ",Enums.Shape.keys()[Item.Shape])
 			result = self.Shape == Item.Shape
 		Enums.SortMode.Family:
-			print("Expected: ", Enums.Family.keys()[self.Family]," Received: ",Enums.Family.keys()[Item.Family])
+			#print("Expected: ", Enums.Family.keys()[self.Family]," Received: ",Enums.Family.keys()[Item.Family])
 			result = self.Family == Item.Family
 		Enums.SortMode.Colour:
-			print("Expected: ", Enums.Colour.keys()[self.Colour]," Received: ",Enums.Colour.keys()[Item.Colour])
+			#print("Expected: ", Enums.Colour.keys()[self.Colour]," Received: ",Enums.Colour.keys()[Item.Colour])
 			result = self.Colour == Item.Colour
 			
 	return result

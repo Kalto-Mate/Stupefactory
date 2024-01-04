@@ -21,6 +21,4 @@ func spawnWalker():
 
 func _updateSpawnTimer(newGameSpeed:float):
 	spawnTimer.wait_time = baseSpawnInterval / newGameSpeed
-
-func pauseTimer(state:bool):
-	spawnTimer.paused = state
+	print("spawnTimer.wait_time: " ,spawnTimer.wait_time)

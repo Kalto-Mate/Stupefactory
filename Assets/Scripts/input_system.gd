@@ -23,17 +23,17 @@ func randomiseSortParameters():
 		Enums.SortMode.Shape:
 			for n in range(0,InputMachines.size()):
 				InputMachines[n].SetSortByShape(n)
-				print("<<<",n,">>>")
+				#print("<<<",n,">>>")
 			
 		Enums.SortMode.Family:
 			for n in range(0,InputMachines.size()):
 				InputMachines[n].SetSortByFamily(n)
-				print("<<<",n,">>>")
+				#print("<<<",n,">>>")
 				
 		Enums.SortMode.Colour:
 			for n in range(0,InputMachines.size()):
 				InputMachines[n].SetSortByColour(n)
-				print("<<<",n,">>>")
+				#print("<<<",n,">>>")
 
 	
 
