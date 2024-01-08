@@ -40,6 +40,6 @@ offset_left = -20.0
 offset_top = -37.0
 offset_right = 20.0
 offset_bottom = -14.0
-text = "[?,?]"
+text = "X"
 label_settings = SubResource("LabelSettings_0px3v")
 horizontal_alignment = 1

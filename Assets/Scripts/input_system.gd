@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func randomiseSortParameters():
-	var InputMachines_order: Array[InputMachine] = InputMachines
+	var InputMachines_order = InputMachines.duplicate()
 	InputMachines_order.shuffle()
 	
 	#We make sure we don't randomnly choose the same mode we were in by recording it and removing it from the choices

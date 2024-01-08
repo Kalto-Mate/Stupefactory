@@ -41,7 +41,7 @@ func SetSortByColour(_Colour: Enums.Colour):
 func _processItem(body:Node2D):
 	var Item = body as ItemClass
 	#Check how item compares to the mode the machine is on
-	if self._ItemIsCorrectType(Item):
+	if self.ItemIsCorrectType(Item):
 		Signals.objectInserted.emit()
 		#print(Item.name, " is the correct type, score points")
 	else:
@@ -51,7 +51,7 @@ func _processItem(body:Node2D):
 	body.queue_free()
 
 
-func _ItemIsCorrectType (Item:ItemClass) -> bool :
+func ItemIsCorrectType (Item:ItemClass) -> bool :
 	var result : bool = false
 	match self.SortMode:
 		Enums.SortMode.Shape:
