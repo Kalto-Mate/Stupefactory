@@ -19,6 +19,7 @@ var speedDecrement : float = 1
 @export var sprite : Sprite2D
 
 @export var SpriteSheets: Array[Texture2D] #Assumed Order Triangle, Square, Round
+@export var debugLabel : Label
 
 func _ready():
 	Signals.seeSawIsMoving.connect(_PauseWalking)
@@ -55,17 +56,24 @@ func _updateCurrentBaseSpeed(newGameSpeed:float):
 func _randomizeSelf():
 	var randShape : int = randi_range(0,SpriteSheets.size()-1)
 	self.sprite.texture = SpriteSheets[randShape]
-	@warning_ignore("int_as_enum_without_cast")
-	self.Shape = randShape
+	self.Shape = randShape as Enums.Shape
 	
 	var randColour : int = randi_range(0,Enums.Colour.size()-1)
 	self.sprite.frame_coords.x = randColour
-	@warning_ignore("int_as_enum_without_cast")
-	self.Colour = randColour
+	self.Colour = randColour as Enums.Colour
 	
 	var randFamily : int = randi_range(0,Enums.Family.size()-1)
 	self.sprite.frame_coords.y = randFamily
-	@warning_ignore("int_as_enum_without_cast")
-	self.Family = randFamily
+	self.Family = randFamily as Enums.Family
 	
-	#print ("Selfrand into [",Enums.Shape.keys()[randShape],Enums.Colour.keys()[randColour],Enums.Family.keys()[randFamily],"]")
+	debugLabel.text = Enums.Shape_name [self.Shape]  \
+					+ Enums.Family_name[self.Family] \
+					+ Enums.Colour_name[self.Colour]
+	
+	if Globals.InputMachines[Globals.seeSawPosition+1]._ItemIsCorrectType(self) :
+		#If the present randomisation is correct for the currently connected input belt, we reroll
+		#This way, it becomes imposible to score points while afk since, for example, if SeeSaw is
+		#connected to a belt that expects triangular objects, those will never spawn
+		print("Re-randomizing!!")
+		self._randomizeSelf()
+	

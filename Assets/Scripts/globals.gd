@@ -1,27 +1,36 @@
 extends Node
 #GAME STATUS================================================================================
+var seeSawPosition : int
+
 var Game_Speed : float
 var Game_Speed_STORE : float
 const RESET_Game_Speed : float = 1.5
-const gameSpeedIncrease_interval = 0.4
+const gameSpeedIncrease_interval = 0.3
 
 var Score : int
 const RESET_Score : int = 0
 
 var InsertionCounter : int  #Keeps tracks of the number of items that made it to a machine
 const RESET_InsertionCounter : int = 0
-
 var _triggerModeChangeAt : int #The number of items that need to make it to a machine
 const RESET_triggerModeChangeAt : int = 3
 var _triggerModeChangeAt_FLOAT : float
+
 #CONFIG====================================================================================
 const _min_Game_Speed : float = -1
-const _max_Game_Speed : float = 8.1
+const _max_Game_Speed : float = 10
+const maxAnimSpeed : float = 8.1
+const minSpawnSpeed : float = 0.8
 const _triggerModeChangeAt_IncreaseInterval : float = 0.2
+
+#REFERENCES================================================================================
+var InputMachines: Array[InputMachine]
+
 
 func _ready():
 	resetAll()
 	Signals.objectInserted.connect(increaseInsertionCounter)
+	Signals.seeSawChangedPosition.connect(updateSeeSawPos)
 
 func setGameSpeedTo(ammount : float):
 	self.Game_Speed = ammount
@@ -61,7 +70,12 @@ func increaseInsertionCounter():
 	#DEBUG CODE
 	var DebugMessage : String = "In: " + str(self.InsertionCounter)
 	Signals.debugPrint.emit(DebugMessage)
-	
+
+func updateSeeSawPos(pos:int):
+	var debugMessage = "SeeSawPos: " + str(pos)
+	Signals.debugPrint.emit(debugMessage)
+	self.seeSawPosition = pos
+
 func resetAll():
 	self.Game_Speed = RESET_Game_Speed
 	self.Score = RESET_Score

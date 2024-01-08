@@ -6,6 +6,7 @@ signal pi_tiltNegative
 
 #General Events
 signal seeSawIsMoving(status:bool)
+signal seeSawChangedPosition(newPos:int)
 signal gameSpeedChanged(value:float)
 signal objectInserted
 signal reachedInsertionLimit

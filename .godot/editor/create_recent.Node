@@ -1,10 +1,10 @@
+Label
+Sprite2D
 AudioStreamPlayer2D
 AudioStreamPlayer
 AnimationPlayer
 Node
 Node2D
-Label
-Sprite2D
 TextureRect
 RayCast2D
 CollisionShape2D

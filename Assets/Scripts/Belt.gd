@@ -7,4 +7,4 @@ func _ready():
 	Signals.gameSpeedChanged.connect(_changeAnimSpeed)
 
 func _changeAnimSpeed(newSpeed: float):
-	animator.speed_scale = newSpeed
+	animator.speed_scale = clamp(newSpeed,-10,Globals.maxAnimSpeed)

@@ -22,6 +22,7 @@ func _tilt(direction: int):
 	var NewPositionIndex = PositionIndex + direction
 	NewPositionIndex = clamp(NewPositionIndex,MinPositionIndex,MaxPositionIndex)
 	PositionIndex = NewPositionIndex
+	Signals.seeSawChangedPosition.emit(PositionIndex)
 	_tweenToAngle(PositionIndex*platformMaxAbsAngle)
 
 func _tweenToAngle(TargetAngle:float):
