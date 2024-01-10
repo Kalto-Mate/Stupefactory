@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://fbhm5cav0y4f" path="res://Assets/Sprites/Monitor Symbols.png" id="3_mm7pn"]
 [ext_resource type="Texture2D" uid="uid://c72kuc2nas00v" path="res://Assets/Sprites/InputMachineBacking.png" id="4_3cnil"]
 
+[sub_resource type="Animation" id="Animation_rsrm0"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_5xlh5"]
 resource_name = "flash_warning"
 loop_mode = 1
@@ -37,9 +40,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [false, true, false, true, false, true, false]
 }
-
-[sub_resource type="Animation" id="Animation_rsrm0"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tpgvf"]
 _data = {

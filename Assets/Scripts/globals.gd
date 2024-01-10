@@ -9,6 +9,9 @@ const gameSpeedIncrease_interval = 0.3
 
 var Score : int
 const RESET_Score : int = 0
+const maxScore : int = 999999
+var Health : float
+const RESET_Health : float = 100
 
 var InsertionCounter : int  #Keeps tracks of the number of items that made it to a machine
 const RESET_InsertionCounter : int = 0
@@ -23,6 +26,11 @@ const maxAnimSpeed : float = 8.1
 const minSpawnSpeed : float = 0.8
 const _triggerModeChangeAt_IncreaseInterval : float = 0.2
 
+const wrongSortPenalty : float = 25
+const correctSortReward : float = 5
+const correctSortPoints : int = 100
+const itemFellPenalty : float = 10
+
 #REFERENCES================================================================================
 var InputMachines: Array[InputMachine]
 
@@ -31,6 +39,10 @@ func _ready():
 	resetAll()
 	Signals.objectInserted.connect(increaseInsertionCounter)
 	Signals.seeSawChangedPosition.connect(updateSeeSawPos)
+	
+	Signals.wrongSort.connect(wrongSortDamage)
+	Signals.ItemFell.connect(itemFellDamage)
+	Signals.correctSort.connect(correctSortScore)
 
 func setGameSpeedTo(ammount : float):
 	self.Game_Speed = ammount
@@ -76,9 +88,40 @@ func updateSeeSawPos(pos:int):
 	Signals.debugPrint.emit(debugMessage)
 	self.seeSawPosition = pos
 
+# HEALTH FUNCTIONALITY =========================================================
+func modifyHealth (ammount : float):
+	var newHealth : float = self.Health + ammount
+	self.Health = clamp(newHealth,0,RESET_Health)
+	Signals.healthChanged.emit(self.Health)
+	
+func setHealth (ammount : float):
+	self.Health = clamp(ammount,0,RESET_Health)
+	Signals.healthChanged.emit(self.Health)
+
+func wrongSortDamage():
+	self.modifyHealth(-1 * wrongSortPenalty)
+	
+func itemFellDamage():
+	self.modifyHealth(-1 * itemFellPenalty)
+	
+func correctSortScore():
+	self.modifyHealth(abs (correctSortReward) )
+	self.scorePoints (correctSortPoints)
+	
+# SCORE FUNCTIONALITY =========================================================
+func scorePoints (ammount : int):
+	var newScore : float = self.Score + ammount
+	self.Score = clamp(newScore,0,maxScore)
+	Signals.scoreChanged.emit(self.Score)
+	
+func setScore (ammount : int):
+	self.Score = clamp(ammount,0,maxScore)
+	Signals.scoreChanged.emit(self.Score)
+# ==============================================================================
 func resetAll():
 	self.Game_Speed = RESET_Game_Speed
-	self.Score = RESET_Score
+	setScore(RESET_Score)
+	setHealth(RESET_Health)
 	self.InsertionCounter = RESET_InsertionCounter
 	self._triggerModeChangeAt = RESET_triggerModeChangeAt
 	self._triggerModeChangeAt_FLOAT = RESET_triggerModeChangeAt

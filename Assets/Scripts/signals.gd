@@ -15,6 +15,9 @@ signal aboutToReachInsertionLimit
 #Scoring
 signal wrongSort
 signal correctSort
+signal ItemFell
+signal healthChanged(value:float)
+signal scoreChanged(value:int)
 
 #Debug
 signal debugPrint(message:String)

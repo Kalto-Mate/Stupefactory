@@ -4,13 +4,12 @@ extends Node
 
 var lastSortModeChoice : int = 1
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Globals.InputMachines = self.InputMachines
 	randomiseSortParameters()
 	Signals.reachedInsertionLimit.connect(randomiseSortParameters)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func randomiseSortParameters():
 	var InputMachines_order = InputMachines.duplicate()
 	InputMachines_order.shuffle()
@@ -37,8 +36,3 @@ func randomiseSortParameters():
 			for n in range(0,InputMachines_order.size()):
 				InputMachines_order[n].SetSortByColour(n)
 				#print("<<<",n,">>>")
-
-	
-
-
-

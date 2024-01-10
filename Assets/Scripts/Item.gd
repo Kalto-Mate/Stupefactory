@@ -20,7 +20,6 @@ var speedDecrement : float = 1
 
 @export var SpriteSheets: Array[Texture2D] #Assumed Order Triangle, Square, Round
 @export var debugLabel : Label
-var reRandomizationCounter : int = 0
 
 func _ready():
 	Signals.seeSawIsMoving.connect(_PauseWalking)
@@ -72,12 +71,9 @@ func _randomizeSelf():
 					#+ Enums.Colour_name[self.Colour]
 	
 	var InputMachineToAsk = Globals.InputMachines[Globals.seeSawPosition+1]
-	print("Asking " + InputMachineToAsk.name +" -> " + str(Globals.seeSawPosition))
 	if InputMachineToAsk.ItemIsCorrectType(self) :
 		#If the present randomisation is correct for the currently connected input belt, we reroll
 		#This way, it becomes imposible to score points while afk since, for example, if SeeSaw is
 		#connected to a belt that expects triangular objects, those will never spawn
 		self._randomizeSelf()
-		reRandomizationCounter += 1
-		debugLabel.text = str(reRandomizationCounter)
 	

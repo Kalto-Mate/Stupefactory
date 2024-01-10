@@ -25,13 +25,11 @@ func SetSortByShape(_Shape: Enums.Shape):
 	self.Shape = _Shape
 	Screen.frame_coords = Vector2(_Shape,Enums.SortMode.Shape)
 	WrongAnimator.stop()
-
 func SetSortByFamily(_Family: Enums.Family):
 	self.SortMode = Enums.SortMode.Family
 	self.Family = _Family
 	Screen.frame_coords = Vector2(_Family,Enums.SortMode.Family)
 	WrongAnimator.stop()
-	
 func SetSortByColour(_Colour: Enums.Colour):
 	self.SortMode = Enums.SortMode.Colour
 	self.Colour = _Colour
@@ -43,10 +41,10 @@ func _processItem(body:Node2D):
 	#Check how item compares to the mode the machine is on
 	if self.ItemIsCorrectType(Item):
 		Signals.objectInserted.emit()
-		#print(Item.name, " is the correct type, score points")
+		Signals.correctSort.emit()
 	else:
 		self.flashWrongItem()
-		#print(Item.name, " is NOT the correct type, deduct points")
+		Signals.wrongSort.emit()
 	
 	body.queue_free()
 
