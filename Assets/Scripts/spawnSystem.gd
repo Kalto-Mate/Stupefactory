@@ -25,6 +25,9 @@ func spawnWalker():
 	#print("Spawning walker type ",chosenWalkerID," at spawnPoint ", chosenSpawnerID)
 
 func _updateSpawnTimer(newGameSpeed:float):
-	var newTime = baseSpawnInterval / newGameSpeed
-	spawnTimer.wait_time = clamp(newTime,Globals.minSpawnSpeed,100)
-	print("spawnTimer.wait_time: " ,spawnTimer.wait_time)
+	if newGameSpeed == 0:
+		spawnTimer.paused = true
+	else:
+		var newTime = baseSpawnInterval / newGameSpeed
+		spawnTimer.wait_time = clamp(newTime,Globals.minSpawnSpeed,100)
+	#print("spawnTimer.wait_time: " ,spawnTimer.wait_time)

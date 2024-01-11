@@ -1,3 +1,5 @@
+AudioStreamPlayer
+AnimationPlayer
 Label
 CollisionShape2D
 StaticBody2D
@@ -6,8 +8,6 @@ Area2D
 TextureProgressBar
 Sprite2D
 AudioStreamPlayer2D
-AudioStreamPlayer
-AnimationPlayer
 Node2D
 TextureRect
 RayCast2D

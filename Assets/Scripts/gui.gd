@@ -14,5 +14,5 @@ func UpdateHealthBar(newValue: float):
 	HealthBar.value = newValue
 
 func UpdateScoreDisplay(newValue : int):
-	print("Score Changed to " + str(newValue))
+	#print("Score Changed to " + str(newValue))
 	ScoreDisplay.text = StringFormatter % newValue

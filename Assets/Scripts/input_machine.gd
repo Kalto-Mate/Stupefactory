@@ -5,6 +5,7 @@ class_name  InputMachine
 @export var Screen : Sprite2D
 @export var WarningAnimator : AnimationPlayer
 @export var WrongAnimator : AnimationPlayer
+@export var WhistleAnimator : AnimationPlayer
 
 var SortMode : Enums.SortMode
 
@@ -68,7 +69,12 @@ func ItemIsCorrectType (Item:ItemClass) -> bool :
 func flashWarning():
 	WarningAnimator.play("flash_warning")
 func stopFlashingWarning():
+	self.factoryWistle()
 	WarningAnimator.stop()
 func flashWrongItem():
 	WrongAnimator.stop()
 	WrongAnimator.play("flash_wrong")
+func factoryWistle():
+	WhistleAnimator.stop()
+	WhistleAnimator.play("factory_whistle")
+	pass

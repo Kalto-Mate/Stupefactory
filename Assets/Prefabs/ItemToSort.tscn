@@ -36,6 +36,7 @@ one_way_collision_margin = 0.0
 target_position = Vector2(0, 45)
 
 [node name="DebugLabel" type="Label" parent="."]
+visible = false
 offset_left = -20.0
 offset_top = -37.0
 offset_right = 20.0

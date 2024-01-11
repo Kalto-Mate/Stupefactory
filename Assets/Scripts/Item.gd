@@ -66,9 +66,9 @@ func _randomizeSelf():
 	self.sprite.frame_coords.y = randFamily
 	self.Family = randFamily as Enums.Family
 	
-	#debugLabel.text = Enums.Shape_name [self.Shape]  \
-					#+ Enums.Family_name[self.Family] \
-					#+ Enums.Colour_name[self.Colour]
+	debugLabel.text = Enums.Shape_name [self.Shape]  \
+					+ Enums.Family_name[self.Family] \
+					+ Enums.Colour_name[self.Colour]
 	
 	var InputMachineToAsk = Globals.InputMachines[Globals.seeSawPosition+1]
 	if InputMachineToAsk.ItemIsCorrectType(self) :

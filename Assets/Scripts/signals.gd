@@ -11,6 +11,7 @@ signal gameSpeedChanged(value:float)
 signal objectInserted
 signal reachedInsertionLimit
 signal aboutToReachInsertionLimit
+signal healthReachedZero
 
 #Scoring
 signal wrongSort

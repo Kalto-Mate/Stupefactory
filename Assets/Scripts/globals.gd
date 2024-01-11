@@ -19,24 +19,25 @@ var _triggerModeChangeAt : int #The number of items that need to make it to a ma
 const RESET_triggerModeChangeAt : int = 3
 var _triggerModeChangeAt_FLOAT : float
 
-#CONFIG====================================================================================
+#region CONFIG====================================================================================
 const _min_Game_Speed : float = -1
 const _max_Game_Speed : float = 10
 const maxAnimSpeed : float = 8.1
 const minSpawnSpeed : float = 0.8
 const _triggerModeChangeAt_IncreaseInterval : float = 0.2
 
-const wrongSortPenalty : float = 25
-const correctSortReward : float = 5
-const correctSortPoints : int = 100
-const itemFellPenalty : float = 10
+const wrongSortPenalty : float = 18
+const correctSortReward : float = 6
+const correctSortPoints : int = 150
+const itemFellPenalty : float = 5
+#endregion
 
 #REFERENCES================================================================================
 var InputMachines: Array[InputMachine]
 
-
 func _ready():
 	resetAll()
+	
 	Signals.objectInserted.connect(increaseInsertionCounter)
 	Signals.seeSawChangedPosition.connect(updateSeeSawPos)
 	
@@ -51,8 +52,8 @@ func setGameSpeedTo(ammount : float):
 	Signals.gameSpeedChanged.emit(self.Game_Speed)
 	
 	#DEBUG CODE
-	var DebugMessage : String = "GameSpeed: " + str(self.Game_Speed)
-	Signals.debugPrint.emit(DebugMessage)
+	#var DebugMessage : String = "GameSpeed: " + str(self.Game_Speed)
+	#Signals.debugPrint.emit(DebugMessage)
 
 func increaseGameSpeedBy(ammount : float):
 	setGameSpeedTo(self.Game_Speed + ammount)
@@ -61,7 +62,7 @@ func increaseGameSpeed():
 	setGameSpeedTo(self.Game_Speed + self.gameSpeedIncrease_interval)
 	_triggerModeChangeAt_FLOAT += _triggerModeChangeAt_IncreaseInterval
 	self._triggerModeChangeAt = round(_triggerModeChangeAt_FLOAT)
-	print("ChangeModeAt = " , self._triggerModeChangeAt, " (",self._triggerModeChangeAt_FLOAT , ")")
+	#print("ChangeModeAt = " , self._triggerModeChangeAt, " (",self._triggerModeChangeAt_FLOAT , ")")
 	
 func pauseGameSpeed():
 	self.Game_Speed_STORE = self.Game_Speed
@@ -70,7 +71,9 @@ func pauseGameSpeed():
 func unpauseGameSpeed():
 	setGameSpeedTo(self.Game_Speed_STORE)
 
-
+func gameOverSpeed():
+	setGameSpeedTo(0)
+	
 func increaseInsertionCounter():
 	self.InsertionCounter += 1
 	
@@ -80,19 +83,21 @@ func increaseInsertionCounter():
 		Signals.reachedInsertionLimit.emit()
 		self.InsertionCounter = 0
 	#DEBUG CODE
-	var DebugMessage : String = "In: " + str(self.InsertionCounter)
-	Signals.debugPrint.emit(DebugMessage)
+	#var DebugMessage : String = "In: " + str(self.InsertionCounter)
+	#Signals.debugPrint.emit(DebugMessage)
 
 func updateSeeSawPos(pos:int):
 	var debugMessage = "SeeSawPos: " + str(pos)
 	Signals.debugPrint.emit(debugMessage)
 	self.seeSawPosition = pos
 
-# HEALTH FUNCTIONALITY =========================================================
+#region HEALTH FUNCTIONALITY =========================================================
 func modifyHealth (ammount : float):
 	var newHealth : float = self.Health + ammount
 	self.Health = clamp(newHealth,0,RESET_Health)
 	Signals.healthChanged.emit(self.Health)
+	if self.Health <= 0	:
+		Signals.healthReachedZero.emit()
 	
 func setHealth (ammount : float):
 	self.Health = clamp(ammount,0,RESET_Health)
@@ -107,8 +112,9 @@ func itemFellDamage():
 func correctSortScore():
 	self.modifyHealth(abs (correctSortReward) )
 	self.scorePoints (correctSortPoints)
-	
-# SCORE FUNCTIONALITY =========================================================
+#endregion
+
+#region SCORE FUNCTIONALITY =========================================================
 func scorePoints (ammount : int):
 	var newScore : float = self.Score + ammount
 	self.Score = clamp(newScore,0,maxScore)
@@ -117,7 +123,9 @@ func scorePoints (ammount : int):
 func setScore (ammount : int):
 	self.Score = clamp(ammount,0,maxScore)
 	Signals.scoreChanged.emit(self.Score)
-# ==============================================================================
+#endregion ==============================================================================
+
+#region GAME OVER LOGIC ========================================================
 func resetAll():
 	self.Game_Speed = RESET_Game_Speed
 	setScore(RESET_Score)
