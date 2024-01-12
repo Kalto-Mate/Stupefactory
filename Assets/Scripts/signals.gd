@@ -4,6 +4,7 @@ extends Node
 signal pi_tiltPositive
 signal pi_tiltNegative
 signal pi_restartGame
+signal pi_toggleMusic()
 
 #General Events
 signal seeSawIsMoving(status:bool)

@@ -16,7 +16,14 @@ const minPlaybackSpeed : float = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setPlayBackSpeed(1)
+	if Globals.musicEnabled:
+		self.AudioPlayer.volume_db = 0
+	else:
+		self.AudioPlayer.volume_db = -80
+	
+	
 	Signals.gameSpeedChanged.connect(gameSpeedChanged)
+	Signals.pi_toggleMusic.connect(toggleMusic)
 
 func setPlayBackSpeed(value: float):
 	self.PlaybackSpeed = value
@@ -52,3 +59,12 @@ func _tweenAudioSpeed(TargetSpeed:float,TimeFrame:float):
 	SpeedChange_Tween = get_tree().create_tween()
 	
 	SpeedChange_Tween.tween_property(self.AudioPlayer,"pitch_scale",TargetSpeed,TimeFrame)
+
+func toggleMusic():
+	#print("Set play music to ",!self.AudioPlayer.playing)
+	if Globals.musicEnabled:
+		self.AudioPlayer.volume_db = -80
+	else:
+		self.AudioPlayer.volume_db = 0
+
+	Globals.musicEnabled = !Globals.musicEnabled

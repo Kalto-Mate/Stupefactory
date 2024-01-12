@@ -32,6 +32,7 @@ func OpenMenu():#Called from Animator
 	Signals.openMenu.emit(true)
 
 func RestartGame():
-	print("GameBrain: Restarting Game")
+	#print("GameBrain: Restarting Game")
+	Globals.restartCounter += 1
 	Globals.resetAll()
 	get_tree().reload_current_scene()

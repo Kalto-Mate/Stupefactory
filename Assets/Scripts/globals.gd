@@ -21,6 +21,9 @@ var _triggerModeChangeAt : int #The number of items that need to make it to a ma
 const RESET_triggerModeChangeAt : int = 3
 var _triggerModeChangeAt_FLOAT : float
 
+#PERSISTANT GAME STATUS===========================================================================
+var musicEnabled:bool = true
+var restartCounter:int
 #region CONFIG====================================================================================
 const _min_Game_Speed : float = -1
 const _max_Game_Speed : float = 10
@@ -129,6 +132,8 @@ func setScore (ammount : int):
 
 #region GAME LOGIC ========================================================
 func resetAll():
+	print(restartCounter,") PlayMusicSetting: ", musicEnabled)
+	
 	self.GameIsOver = false
 	updateSeeSawPos(RESET_seeSawPosition)
 	self.Game_Speed = RESET_Game_Speed
@@ -140,4 +145,5 @@ func resetAll():
 
 func setGameOver(state:bool):
 	self.GameIsOver = state
+	
 #endregion

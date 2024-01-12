@@ -38,3 +38,6 @@ func restartGame():
 	if Globals.GameIsOver:
 		print("RestartRequest")
 		Signals.pi_restartGame.emit()
+func musicToggle():
+	#print("Toggled play music")
+	Signals.pi_toggleMusic.emit()
