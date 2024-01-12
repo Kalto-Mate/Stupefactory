@@ -1,6 +1,8 @@
 extends Node
 #GAME STATUS================================================================================
 var seeSawPosition : int
+const RESET_seeSawPosition = 0
+var GameIsOver : bool = false
 
 var Game_Speed : float
 var Game_Speed_STORE : float
@@ -87,8 +89,8 @@ func increaseInsertionCounter():
 	#Signals.debugPrint.emit(DebugMessage)
 
 func updateSeeSawPos(pos:int):
-	var debugMessage = "SeeSawPos: " + str(pos)
-	Signals.debugPrint.emit(debugMessage)
+	#var debugMessage = "SeeSawPos: " + str(pos)
+	#Signals.debugPrint.emit(debugMessage)
 	self.seeSawPosition = pos
 
 #region HEALTH FUNCTIONALITY =========================================================
@@ -125,11 +127,17 @@ func setScore (ammount : int):
 	Signals.scoreChanged.emit(self.Score)
 #endregion ==============================================================================
 
-#region GAME OVER LOGIC ========================================================
+#region GAME LOGIC ========================================================
 func resetAll():
+	self.GameIsOver = false
+	updateSeeSawPos(RESET_seeSawPosition)
 	self.Game_Speed = RESET_Game_Speed
 	setScore(RESET_Score)
 	setHealth(RESET_Health)
 	self.InsertionCounter = RESET_InsertionCounter
 	self._triggerModeChangeAt = RESET_triggerModeChangeAt
 	self._triggerModeChangeAt_FLOAT = RESET_triggerModeChangeAt
+
+func setGameOver(state:bool):
+	self.GameIsOver = state
+#endregion

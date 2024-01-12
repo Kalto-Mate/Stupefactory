@@ -3,6 +3,7 @@ extends Node
 #pi = Player Input
 signal pi_tiltPositive
 signal pi_tiltNegative
+signal pi_restartGame
 
 #General Events
 signal seeSawIsMoving(status:bool)
@@ -22,3 +23,6 @@ signal scoreChanged(value:int)
 
 #Debug
 signal debugPrint(message:String)
+
+#GUI
+signal openMenu(state:bool)

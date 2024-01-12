@@ -75,6 +75,7 @@ func flashWrongItem():
 	WrongAnimator.stop()
 	WrongAnimator.play("flash_wrong")
 func factoryWistle():
+	WrongAnimator.stop()
 	WhistleAnimator.stop()
 	WhistleAnimator.play("factory_whistle")
 	pass

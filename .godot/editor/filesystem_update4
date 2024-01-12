@@ -15,3 +15,6 @@ res://Assets/Scripts/song_system.gd
 res://Assets/Scripts/spawnSystem.gd
 res://Assets/Scripts/game_brain.gd
 res://Assets/Scripts/Item.gd
+res://Assets/Scripts/PlayerInput.gd
+res://Assets/Scripts/TouchControls.gd
+res://Assets/Scripts/Menu.gd

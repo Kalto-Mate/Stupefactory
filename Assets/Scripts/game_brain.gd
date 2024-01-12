@@ -5,7 +5,7 @@ extends Node
 func _ready():
 	Signals.reachedInsertionLimit.connect(playLevelUpSequence)
 	Signals.healthReachedZero.connect(playGameOverSequence)
-
+	Signals.pi_restartGame.connect(RestartGame)
 #region LEVEL UP SEQUENCE
 
 func playLevelUpSequence():
@@ -23,6 +23,15 @@ func unPauseGameSpeed():
 
 #region GAME OVER SEQUENCE
 func playGameOverSequence():
+	Globals.setGameOver(true)
 	SequencePlayer.play(gameOver_animname)
-func HaltGameSpeed():
+	
+func HaltGameSpeed(): #Called from Animator
 	Globals.gameOverSpeed()
+func OpenMenu():#Called from Animator
+	Signals.openMenu.emit(true)
+
+func RestartGame():
+	print("GameBrain: Restarting Game")
+	Globals.resetAll()
+	get_tree().reload_current_scene()

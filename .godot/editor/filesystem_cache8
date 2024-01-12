@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1704905868
+::res://::1705077362
 icon.svg::CompressedTexture2D::1850917042875202754::1703004071::1703004084::1::::<><>::
 ::res://Assets/::1705007902
 ::res://Assets/Debug/::1704323248
@@ -17,31 +17,33 @@ SongLoop.mp3::AudioStreamMP3::3390882288648540302::1704049290::1704049547::1::::
 ::res://Assets/Music/OilPanic/::1704050527
 Oil Panic (Arranged).mp3::AudioStreamMP3::6746552111275981943::1510253369::1704050486::1::::<><>::
 Oil Panic (Loop).mp3::AudioStreamMP3::2250040396415304215::1704050485::1704050527::1::::<><>::
-::res://Assets/Prefabs/::1705013836
-InputMachine.tscn::PackedScene::3036513929800114739::1705013836::0::1::::<><>::res://Assets/Scripts/input_machine.gd<>uid://c1a2ogqorsbxi::::res://Assets/Debug/Deleter.png<>uid://d1trf221bfqs::::res://Assets/Sound/wrong.mp3<>uid://fbhm5cav0y4f::::res://Assets/Sprites/Monitor Symbols.png<>uid://ddva8oyqkpahr::::res://Assets/Sprites/steamJet.png<>uid://c72kuc2nas00v::::res://Assets/Sprites/InputMachineBacking.png<>uid://22lduhyi45fn::::res://Assets/Sound/Factory Whistle.mp3
-ItemToSort.tscn::PackedScene::9049927583466523947::1705013836::0::1::::<><>::res://Assets/Scripts/Item.gd<>uid://nluf5ambpd4w::::res://Assets/Sprites/Triangular.png<>uid://bamcish5s6kqu::::res://Assets/Debug/ObjectDebug.png<>uid://cbm8l6rhlfqlw::::res://Assets/Sprites/Square.png<>uid://cru7b50ox4y4j::::res://Assets/Sprites/Round.png
-Platform.res::PackedScene::8942267183275519431::1705013836::0::1::::<><>::uid://bnq73siyrh5xf::::res://Assets/Sprites/Platform.png<>uid://cft8jkm7n6f1d::::res://Assets/Prefabs/PlatformBelt.tscn<>uid://v5pyfecn7wrx::::res://Assets/Prefabs/wheel.tscn
+::res://Assets/Prefabs/::1705079610
+InputMachine.tscn::PackedScene::3036513929800114739::1705079610::0::1::::<><>::res://Assets/Scripts/input_machine.gd<>uid://c1a2ogqorsbxi::::res://Assets/Debug/Deleter.png<>uid://d1trf221bfqs::::res://Assets/Sound/wrong.mp3<>uid://fbhm5cav0y4f::::res://Assets/Sprites/Monitor Symbols.png<>uid://ddva8oyqkpahr::::res://Assets/Sprites/steamJet.png<>uid://c72kuc2nas00v::::res://Assets/Sprites/InputMachineBacking.png<>uid://22lduhyi45fn::::res://Assets/Sound/Factory Whistle.mp3
+ItemToSort.tscn::PackedScene::9049927583466523947::1705079610::0::1::::<><>::res://Assets/Scripts/Item.gd<>uid://nluf5ambpd4w::::res://Assets/Sprites/Triangular.png<>uid://bamcish5s6kqu::::res://Assets/Debug/ObjectDebug.png<>uid://cbm8l6rhlfqlw::::res://Assets/Sprites/Square.png<>uid://cru7b50ox4y4j::::res://Assets/Sprites/Round.png
+Platform.res::PackedScene::8942267183275519431::1705079610::0::1::::<><>::uid://bnq73siyrh5xf::::res://Assets/Sprites/Platform.png<>uid://cft8jkm7n6f1d::::res://Assets/Prefabs/PlatformBelt.tscn<>uid://v5pyfecn7wrx::::res://Assets/Prefabs/wheel.tscn
 PlatformBelt.tscn::PackedScene::5165029041053622611::1703963295::0::1::::<><>::uid://bukp3at2obod3::::res://Assets/Sprites/Conveyor.png<>res://Assets/Scripts/Belt.gd
 SeeSawBelt.tscn::PackedScene::8093035847556432186::1703963295::0::1::::<><>::uid://bukp3at2obod3::::res://Assets/Sprites/Conveyor.png<>res://Assets/Scripts/Belt.gd
-see_saw.tscn::PackedScene::4777515174309127954::1705013836::0::1::::<><>::res://Assets/Scripts/SeeSaw.gd<>uid://dnklean7hh83w::::res://Assets/Prefabs/SeeSawBelt.tscn<>uid://tttc52arjxvs::::res://Assets/Sprites/SeeSaw.png<>uid://v5pyfecn7wrx::::res://Assets/Prefabs/wheel.tscn<>uid://vvanpi8hvfo8::::res://Assets/Sprites/SeeSaw Rotor.png
-spawner.tscn::PackedScene::3559642194206557667::1705013836::0::1::::<><>::uid://c6wc7ds88nue2::::res://Assets/Sprites/Siren.png<>uid://cqe8u7sijyaan::::res://Assets/Debug/Spawner.png<>res://Assets/Scripts/spawner.gd<>uid://d1638q06r7ou2::::res://Assets/Prefabs/ItemToSort.tscn<>uid://ejs7ptyvc5i2::::res://Assets/Sprites/SpawningMachineBacking.png
+see_saw.tscn::PackedScene::4777515174309127954::1705079610::0::1::::<><>::res://Assets/Scripts/SeeSaw.gd<>uid://dnklean7hh83w::::res://Assets/Prefabs/SeeSawBelt.tscn<>uid://tttc52arjxvs::::res://Assets/Sprites/SeeSaw.png<>uid://v5pyfecn7wrx::::res://Assets/Prefabs/wheel.tscn<>uid://vvanpi8hvfo8::::res://Assets/Sprites/SeeSaw Rotor.png
+spawner.tscn::PackedScene::3559642194206557667::1705079610::0::1::::<><>::uid://c6wc7ds88nue2::::res://Assets/Sprites/Siren.png<>uid://cqe8u7sijyaan::::res://Assets/Debug/Spawner.png<>res://Assets/Scripts/spawner.gd<>uid://d1638q06r7ou2::::res://Assets/Prefabs/ItemToSort.tscn<>uid://ejs7ptyvc5i2::::res://Assets/Sprites/SpawningMachineBacking.png
 wheel.tscn::PackedScene::1536850931871183169::1703963416::0::1::::<><>::uid://b4utlaq1d6i3i::::res://Assets/Sprites/wheel.png<>res://Assets/Scripts/wheel.gd
-::res://Assets/Scenes/::1705013836
-main.scn::PackedScene::6975660524273726320::1705013836::0::1::::<><>::uid://d0nx3meuivrgp::::res://Assets/Prefabs/Platform.res<>uid://caci8hk0t1ri5::::res://Assets/Prefabs/see_saw.tscn<>res://Assets/Scripts/out_of_bounds.gd<>uid://ct5fjxgrakhu2::::res://Assets/Debug/Layout.png<>uid://bn74xduf5aj3::::res://Assets/Sprites/BG1.png<>uid://ba063gyehr8sb::::res://Assets/Sprites/OverlapDecor.png<>res://Assets/Scripts/game_brain.gd<>res://Assets/Scripts/DebugPrinter.gd<>res://Assets/Scripts/spawnSystem.gd<>uid://bqyk10vcrb7vb::::res://Assets/Prefabs/spawner.tscn<>res://Assets/Scripts/input_system.gd<>uid://bji568ss7olvn::::res://Assets/Prefabs/InputMachine.tscn<>res://Assets/Scripts/song_system.gd<>uid://7b63pdqutek2::::res://Assets/Music/OilPanic/Oil Panic (Loop).mp3<>res://Assets/Scripts/PlayerInput.gd<>res://Assets/Scripts/gui.gd<>uid://cxm0l1b0vxtg0::::res://Assets/Sprites/GUI/Hp/Under.png<>uid://b0yrq7yc85gc2::::res://Assets/Sprites/GUI/Hp/Over.png<>uid://md4pe4ve1337::::res://Assets/Sprites/GUI/Hp/Progress.png<>uid://ccpb2tfkkx6ij::::res://Assets/Sprites/GUI/7segments.ttf
-::res://Assets/Scripts/::1705013835
+::res://Assets/Scenes/::1705079609
+main.scn::PackedScene::6975660524273726320::1705079609::0::1::::<><>::uid://d0nx3meuivrgp::::res://Assets/Prefabs/Platform.res<>uid://caci8hk0t1ri5::::res://Assets/Prefabs/see_saw.tscn<>res://Assets/Scripts/out_of_bounds.gd<>uid://ct5fjxgrakhu2::::res://Assets/Debug/Layout.png<>uid://bn74xduf5aj3::::res://Assets/Sprites/BG1.png<>uid://ba063gyehr8sb::::res://Assets/Sprites/OverlapDecor.png<>res://Assets/Scripts/game_brain.gd<>res://Assets/Scripts/DebugPrinter.gd<>res://Assets/Scripts/spawnSystem.gd<>uid://bqyk10vcrb7vb::::res://Assets/Prefabs/spawner.tscn<>res://Assets/Scripts/input_system.gd<>uid://bji568ss7olvn::::res://Assets/Prefabs/InputMachine.tscn<>res://Assets/Scripts/song_system.gd<>uid://7b63pdqutek2::::res://Assets/Music/OilPanic/Oil Panic (Loop).mp3<>res://Assets/Scripts/PlayerInput.gd<>res://Assets/Scripts/TouchControls.gd<>res://Assets/Scripts/gui.gd<>res://Assets/Scripts/Menu.gd<>uid://dos0apch1s6vq::::res://Assets/Sprites/GUI/GuideBottom.png<>uid://07fuu81e7ftl::::res://Assets/Sprites/GUI/MenuBG.png<>uid://cxm0l1b0vxtg0::::res://Assets/Sprites/GUI/Hp/Under.png<>uid://b0yrq7yc85gc2::::res://Assets/Sprites/GUI/Hp/Over.png<>uid://md4pe4ve1337::::res://Assets/Sprites/GUI/Hp/Progress.png<>uid://ccpb2tfkkx6ij::::res://Assets/Sprites/GUI/7segments.ttf
+::res://Assets/Scripts/::1705079609
 Belt.gd::GDScript::-1::1704727233::0::1::::<>Sprite2D<>::
 DebugPrinter.gd::GDScript::-1::1704325678::0::1::::<>Label<>::
 enums.gd::GDScript::-1::1704719647::0::1::::<>Node<>::
-game_brain.gd::GDScript::-1::1705006335::0::1::::<>Node<>::
-globals.gd::GDScript::-1::1705013802::0::1::::<>Node<>::
-input_machine.gd::GDScript::-1::1705012363::0::1::::InputMachine<>Node2D<>::
+game_brain.gd::GDScript::-1::1705078833::0::1::::<>Node<>::
+globals.gd::GDScript::-1::1705074645::0::1::::<>Node<>::
+input_machine.gd::GDScript::-1::1705072887::0::1::::InputMachine<>Node2D<>::
 input_system.gd::GDScript::-1::1704907599::0::1::::<>Node<>::
 Item.gd::GDScript::-1::1705013835::0::1::::ItemClass<>CharacterBody2D<>::
-PlayerInput.gd::GDScript::-1::1704387512::0::1::::<>Node<>::
-gui.gd::GDScript::-1::1705004986::0::1::::<>Node<>::
+PlayerInput.gd::GDScript::-1::1705077535::0::1::::PlayerInput<>Node<>::
+gui.gd::GDScript::-1::1705072430::0::1::::<>Node<>::
 out_of_bounds.gd::GDScript::-1::1704913175::0::1::::<>Area2D<>::
+Menu.gd::GDScript::-1::1705079609::0::1::::<>Node<>::
+TouchControls.gd::GDScript::-1::1705077171::0::1::::<>Node<>::
 SeeSaw.gd::GDScript::-1::1704714524::0::1::::<>AnimatableBody2D<>::
-signals.gd::GDScript::-1::1705005398::0::1::::<>Node<>::
+signals.gd::GDScript::-1::1705077887::0::1::::<>Node<>::
 song_system.gd::GDScript::-1::1705011146::0::1::::<>Node<>::
 spawner.gd::GDScript::-1::1704728780::0::1::::SpawnerClass<>Node2D<>::
 spawnSystem.gd::GDScript::-1::1705007654::0::1::::<>Node<>::
@@ -49,7 +51,7 @@ wheel.gd::GDScript::-1::1704727233::0::1::::<>Sprite2D<>::
 ::res://Assets/Sound/::1705009813
 Factory Whistle.mp3::AudioStreamMP3::1951511284271583447::1705009762::1705009813::1::::<><>::
 wrong.mp3::AudioStreamMP3::265424639466614158::1705007922::1705007934::1::::<><>::
-::res://Assets/Sprites/::1705014072
+::res://Assets/Sprites/::1705014079
 BG1.png::CompressedTexture2D::99021699820614478::1704042217::1704042220::1::::<><>::
 Conveyor.png::CompressedTexture2D::3811802121711985218::1704021925::1704021929::1::::<><>::
 InputMachine.png::CompressedTexture2D::5580605134485189300::1704041774::1704041775::1::::<><>::
@@ -67,8 +69,12 @@ Square.png::CompressedTexture2D::4869827703385691588::1703802295::1703802298::1:
 steamJet.png::CompressedTexture2D::7413240219170645143::1705009174::1705009183::1::::<><>::
 Triangular.png::CompressedTexture2D::936387967661592068::1704720252::1704720256::1::::<><>::
 wheel.png::CompressedTexture2D::4464357996776181704::1703802829::1703802831::1::::<><>::
-::res://Assets/Sprites/GUI/::1704910644
+::res://Assets/Sprites/GUI/::1705079897
 7segments.ttf::FontFile::4944294660537694701::1592565210::1704910644::1::::<><>::
+GuideBottom.png::CompressedTexture2D::8180583377697391846::1705074837::1705074942::1::::<><>::
+MainMenu.png::CompressedTexture2D::3639365653752323581::1705074516::1705074562::1::::<><>::
+MenuBG.png::CompressedTexture2D::1821121582556131813::1705075107::1705074942::1::::<><>::
+replayButton.png::CompressedTexture2D::1604532153563379007::1705079897::1705079901::1::::<><>::
 ::res://Assets/Sprites/GUI/Hp/::1704906404
 Over.png::CompressedTexture2D::4191749320279520183::1704906306::1704906404::1::::<><>::
 Progress.png::CompressedTexture2D::850247092470641976::1704906397::1704906404::1::::<><>::
