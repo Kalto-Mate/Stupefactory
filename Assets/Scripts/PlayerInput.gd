@@ -27,16 +27,12 @@ func PollInput():
 func tiltPositive():
 	if !Globals.GameIsOver:
 		Signals.pi_tiltPositive.emit()
-	else:
-		restartGame()
 func tiltNegative():
 	if !Globals.GameIsOver:
-		Signals.pi_tiltNegative.emit()
-	else:
-		restartGame()
+		Signals.pi_tiltNegative.emit()	
 func restartGame():
 	if Globals.GameIsOver:
-		print("RestartRequest")
+		#print("RestartRequest")
 		Signals.pi_restartGame.emit()
 func musicToggle():
 	#print("Toggled play music")

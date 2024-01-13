@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bji568ss7olvn"]
+[gd_scene load_steps=20 format=3 uid="uid://bji568ss7olvn"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/input_machine.gd" id="1_ln6v6"]
 [ext_resource type="Texture2D" uid="uid://c1a2ogqorsbxi" path="res://Assets/Debug/Deleter.png" id="1_wkw1j"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ddva8oyqkpahr" path="res://Assets/Sprites/steamJet.png" id="3_uom0d"]
 [ext_resource type="Texture2D" uid="uid://c72kuc2nas00v" path="res://Assets/Sprites/InputMachineBacking.png" id="4_3cnil"]
 [ext_resource type="AudioStream" uid="uid://22lduhyi45fn" path="res://Assets/Sound/Factory Whistle.mp3" id="5_8cpfx"]
+[ext_resource type="Texture2D" uid="uid://kisc03al58ya" path="res://Assets/Sprites/GreenSiren.png" id="8_57ttj"]
+[ext_resource type="AudioStream" uid="uid://j7ugkwoxdkfm" path="res://Assets/Sound/correct.mp3" id="9_vr6ip"]
 
 [sub_resource type="Animation" id="Animation_rsrm0"]
 length = 0.001
@@ -183,13 +185,64 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlibg"]
 size = Vector2(30, 30)
 
-[node name="InputMachine" type="Node2D" node_paths=PackedStringArray("DeletionArea", "Screen", "WarningAnimator", "WrongAnimator", "WhistleAnimator")]
+[sub_resource type="Animation" id="Animation_hxjlw"]
+resource_name = "siren_flash"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Siren:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_evptp"]
+resource_name = "greenSiren_blink"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Siren:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CorrectSFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i0y2d"]
+_data = {
+"greenSiren_blink": SubResource("Animation_evptp"),
+"siren_flash": SubResource("Animation_hxjlw")
+}
+
+[node name="InputMachine" type="Node2D" node_paths=PackedStringArray("DeletionArea", "Screen", "WarningAnimator", "WrongAnimator", "WhistleAnimator", "SirenAnimator")]
 script = ExtResource("1_ln6v6")
 DeletionArea = NodePath("Deleter")
 Screen = NodePath("Screen")
 WarningAnimator = NodePath("WarningAnimator")
 WrongAnimator = NodePath("WrongAnimator")
 WhistleAnimator = NodePath("FactoryWhistle")
+SirenAnimator = NodePath("SirenAnimator")
 
 [node name="WarningAnimator" type="AnimationPlayer" parent="."]
 libraries = {
@@ -283,3 +336,17 @@ offset = Vector2(-30, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deleter"]
 shape = SubResource("RectangleShape2D_wlibg")
 debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Siren" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(-117, -66)
+texture = ExtResource("8_57ttj")
+hframes = 2
+
+[node name="CorrectSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_vr6ip")
+
+[node name="SirenAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i0y2d")
+}

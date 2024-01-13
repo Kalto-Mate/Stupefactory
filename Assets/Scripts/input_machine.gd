@@ -6,6 +6,7 @@ class_name  InputMachine
 @export var WarningAnimator : AnimationPlayer
 @export var WrongAnimator : AnimationPlayer
 @export var WhistleAnimator : AnimationPlayer
+@export var SirenAnimator : AnimationPlayer
 
 var SortMode : Enums.SortMode
 
@@ -42,6 +43,7 @@ func _processItem(body:Node2D):
 	#Check how item compares to the mode the machine is on
 	if self.ItemIsCorrectType(Item):
 		Signals.objectInserted.emit()
+		self.flashCorrectItem()
 		Signals.correctSort.emit()
 	else:
 		self.flashWrongItem()
@@ -79,3 +81,6 @@ func factoryWistle():
 	WhistleAnimator.stop()
 	WhistleAnimator.play("factory_whistle")
 	pass
+func flashCorrectItem():
+	SirenAnimator.stop()
+	SirenAnimator.play("greenSiren_blink")

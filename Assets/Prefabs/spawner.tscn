@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqyk10vcrb7vb"]
+[gd_scene load_steps=9 format=3 uid="uid://bqyk10vcrb7vb"]
 
-[ext_resource type="Texture2D" uid="uid://c6wc7ds88nue2" path="res://Assets/Sprites/Siren.png" id="1_f4sca"]
 [ext_resource type="Texture2D" uid="uid://cqe8u7sijyaan" path="res://Assets/Debug/Spawner.png" id="1_m4ysh"]
 [ext_resource type="Script" path="res://Assets/Scripts/spawner.gd" id="1_vwyfb"]
 [ext_resource type="PackedScene" uid="uid://d1638q06r7ou2" path="res://Assets/Prefabs/ItemToSort.tscn" id="2_6u4j5"]
+[ext_resource type="Texture2D" uid="uid://c6wc7ds88nue2" path="res://Assets/Sprites/RedSiren.png" id="3_rrep8"]
 [ext_resource type="Texture2D" uid="uid://ejs7ptyvc5i2" path="res://Assets/Sprites/SpawningMachineBacking.png" id="3_ypd5d"]
 
 [sub_resource type="Animation" id="Animation_hxjlw"]
@@ -22,8 +22,37 @@ tracks/0/keys = {
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_evptp"]
+resource_name = "greenSiren_blink"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Siren:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CorrectSFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i0y2d"]
 _data = {
+"greenSiren_blink": SubResource("Animation_evptp"),
 "siren_flash": SubResource("Animation_hxjlw")
 }
 
@@ -35,7 +64,7 @@ Animator = NodePath("AnimationPlayer")
 [node name="Siren" type="Sprite2D" parent="."]
 z_index = 5
 position = Vector2(221, -65)
-texture = ExtResource("1_f4sca")
+texture = ExtResource("3_rrep8")
 hframes = 2
 
 [node name="DebugSprite" type="Sprite2D" parent="."]

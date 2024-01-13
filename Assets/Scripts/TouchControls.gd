@@ -9,7 +9,14 @@ var rightTouchButton_STORE : bool = false
 @export var playerInput : Node
 
 func _ready():
-	leftTouchButton.pressed.connect(playerInput.tiltNegative)
-	rightTouchButton.pressed.connect(playerInput.tiltPositive)
+	leftTouchButton.pressed.connect  (_touchTiltNegative)
+	rightTouchButton.pressed.connect (_touchTiltPositive)
 	restartTouchButton.pressed.connect(playerInput.restartGame)
 	musicTouchButton.pressed.connect(playerInput.musicToggle)
+
+func _touchTiltNegative():
+	print("_touchTiltNegative")
+	playerInput.tiltNegative()
+func _touchTiltPositive():
+	print("_touchTiltPositive")
+	playerInput.tiltPositive()

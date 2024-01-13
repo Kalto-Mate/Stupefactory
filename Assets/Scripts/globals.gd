@@ -132,7 +132,7 @@ func setScore (ammount : int):
 
 #region GAME LOGIC ========================================================
 func resetAll():
-	print(restartCounter,") PlayMusicSetting: ", musicEnabled)
+	#print(restartCounter,") PlayMusicSetting: ", musicEnabled)
 	
 	self.GameIsOver = false
 	updateSeeSawPos(RESET_seeSawPosition)

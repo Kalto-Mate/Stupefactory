@@ -18,3 +18,4 @@ res://Assets/Scripts/Item.gd
 res://Assets/Scripts/PlayerInput.gd
 res://Assets/Scripts/TouchControls.gd
 res://Assets/Scripts/Menu.gd
+res://Assets/Scripts/SeeSaw.gd

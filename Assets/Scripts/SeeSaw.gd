@@ -7,6 +7,12 @@ var MaxPositionIndex: int = 1
 var MinPositionIndex: int = -1
 
 @export var StepTime:float = .1
+@export var soundPlayer : AudioStreamPlayer
+
+@export var positiveSound : AudioStream
+@export var negativeSound : AudioStream
+@export var stuckSound : AudioStream
+
 var platformMaxAbsAngle: float = 30
 
 func _ready():
@@ -19,6 +25,7 @@ func _tiltNegative():
 	_tilt(-1)
 
 func _tilt(direction: int):
+	_playSound(direction)
 	var NewPositionIndex = PositionIndex + direction
 	NewPositionIndex = clamp(NewPositionIndex,MinPositionIndex,MaxPositionIndex)
 	PositionIndex = NewPositionIndex
@@ -42,3 +49,16 @@ func _tweenToAngle(TargetAngle:float):
 func _seeSawStoppedMoving():
 	Signals.seeSawIsMoving.emit(false)
 	pass
+
+func _playSound(direction:int):
+	#Assumed 3 sounds loaded in "negative", "stuck" and "positive" order
+	var movement:int = PositionIndex + direction
+	
+	if abs(movement) == 2 : #If we try to move past (-1,0,1)
+		soundPlayer.stream = stuckSound
+	elif direction > 0:
+		soundPlayer.stream = positiveSound
+	elif direction < 0:
+		soundPlayer.stream = negativeSound
+			
+	soundPlayer.play()
